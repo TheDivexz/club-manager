@@ -45,3 +45,9 @@
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8px);
 }
+
+.property-text {
+    justify-content: center;
+    text-align: center;
+    size: 1.5rem;
+}
