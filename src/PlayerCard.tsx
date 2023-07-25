@@ -34,6 +34,7 @@ const PlayerCard: React.FC<playerObjectProps> = ({playerInfo,detailed_view}) => 
     return (
         <div className="player-card">
             <p className="player-name">{playerInfo.name}</p>
+            {/* Detailed View or Simplified View */}
             {
                 detailed_view ? 
                 (

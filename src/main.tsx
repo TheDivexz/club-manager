@@ -5,7 +5,7 @@ import MatchView from "./MatchView";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <SquadView />
-    {/* <MatchView /> */}
+    {/* <SquadView /> */}
+    <MatchView />
   </React.StrictMode>,
 );

@@ -17,6 +17,11 @@ const MatchView = () => {
     const [teamOnePlayers,setTeamOnePlayers] = useState<number[]>([]);
     const [teamTwoPlayers,setTeamTwoPlayers] = useState<number[]>([]);
 
+    const [rowMask,setRowMask] = useState<number[][]>([[0,9],[0,9],[0,9],[0,9],[0,9]])
+
+    const colNumbersArray = Array.from({ length: 10 }, (_, index) => index);
+    const rowNumbersArray = Array.from({ length: 5 }, (_, index) => index);
+
     async function setTeamNames() {
         setTeamOneName(await invoke("get_team_name",{teamId: 0}));
         setTeamTwoName(await invoke("get_team_name",{teamId: 1}));
@@ -45,8 +50,7 @@ const MatchView = () => {
             if(member.starter) {
                 setTeamTwoPlayers(oldArray => [...oldArray,index])
             }
-        })
-        
+        })   
     }
 
     return (
@@ -55,68 +59,35 @@ const MatchView = () => {
                 <h2 className="blue-text">{teamOneName}</h2>
                 <h2 className="red-text">{teamTwoName}</h2>
             </span>
-            <div className="col">
-                <div className="row">
-                    <div className="box square-blue">{teamOnePlayers[1] ? teamOneSquad[teamOnePlayers[0]].name : ''}</div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red">{teamTwoPlayers[1] ? teamTwoSquad[teamTwoPlayers[0]].name : ''}</div>
-                </div>
-                <div className="row">
-                    <div className="box square-blue">{teamOnePlayers[1] ? teamOneSquad[teamOnePlayers[1]].name : ''}</div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red">{teamTwoPlayers[1] ? teamTwoSquad[teamTwoPlayers[1]].name : ''}</div>
-                </div>
-                <div className="row">
-                    <div className="box square-blue">{teamOnePlayers[2] ? teamOneSquad[teamOnePlayers[2]].name : ''}</div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red">{teamTwoPlayers[2] ? teamTwoSquad[teamTwoPlayers[2]].name : ''}</div>
-                </div>
-                <div className="row">
-                    <div className="box square-blue">{teamOnePlayers[3] ? teamOneSquad[teamOnePlayers[3]].name : ''}</div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red">{teamTwoPlayers[3] ? teamTwoSquad[teamTwoPlayers[3]].name : ''}</div>
-                </div>
-                <div className="row">
-                    <div className="box square-blue">{teamOnePlayers[4] ? teamOneSquad[teamOnePlayers[4]].name : ''}</div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-blue"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red"></div>
-                    <div className="box square-red">{teamTwoPlayers[4] ? teamTwoSquad[teamTwoPlayers[4]].name : ''}</div>
-                </div>
-            </div>
+            {/* Generates the game board */}
+            {
+                rowNumbersArray.map(row_num => {
+                    return (
+                        <div key={row_num} className="row">
+                            {
+                                colNumbersArray.map(number => {
+                                    return (
+                                        number < 5 ? 
+                                        (
+                                            <div key={number} className="box square-blue">
+                                                { rowMask[row_num][0] == number && teamOnePlayers[1] ? teamOneSquad[teamOnePlayers[row_num]].name : '' }
+                                                { rowMask[row_num][1] == number && teamTwoPlayers[1] ? teamTwoSquad[teamTwoPlayers[row_num]].name : '' }
+                                            </div>
+                                        )
+                                        :
+                                        (
+                                            <div key={number} className="box square-red">
+                                                { rowMask[row_num][0] == number && teamOnePlayers[1] ? teamOneSquad[teamOnePlayers[row_num]].name : '' }
+                                                { rowMask[row_num][1] == number && teamTwoPlayers[1] ? teamTwoSquad[teamTwoPlayers[row_num]].name : '' }
+                                            </div>
+                                        )
+                                    )
+                                })
+                            }
+                        </div>
+                    )
+                })
+            }
             <h3 className="text-center">{teamOneScore} :: Score :: {teamTwoScore}</h3>
             <div className="justify-center">
                 <button className="start-btn" onClick={simulateSetup}>START</button>
