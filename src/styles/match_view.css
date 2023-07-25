@@ -1,0 +1,89 @@
+.background {
+    background-color: #eeeeee;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+.match-view {
+    justify-content: center;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.box {
+    width: 10vw;
+    height: 40px;
+}
+
+.square-red {
+    border: 3px red solid;
+    background-color: rgb(255, 175, 175);
+}
+
+.square-blue {
+    border: 3px blue solid;
+    background-color: rgb(175, 175, 255);
+}
+.blue-text {
+    color: blue;
+}
+
+.red-text {
+    color: red;
+}
+
+.title-bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+
+.current-players {
+    display: flex;
+    justify-content: center;
+}
+
+.start-btn {
+    background-color: rgba(31,182,34,1);
+    border-radius: 5px;
+    outline: #aaaaaa solid 1px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 1rem 2rem;
+    margin: 1rem;
+}
+
+.start-btn:hover {
+    background-color: rgb(29, 155, 31);
+    cursor: pointer;
+}
+
+.start-btn:active {
+    background-color: rgb(24, 129, 25);
+}
+
+
+.justify-center {
+    text-align: center;
+    justify-content: center;
+}

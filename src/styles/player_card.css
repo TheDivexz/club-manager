@@ -1,0 +1,47 @@
+/* #eeeeee,#060606,#1fb622,#cff0c5,#aaaaaa */
+
+.player-card {
+    position: relative;
+    background-color: rgba(31,182,34,1);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    outline: #aaaaaa solid 1px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.player-card:hover {
+    background-color: rgb(22, 162, 25);
+    cursor: pointer;
+}
+
+.player-card:active {
+    background-color: rgb(14, 128, 16);
+}
+
+.player-card:active > .property-wrap {
+    background-color: rgb(14, 128, 16);
+}
+
+.player-card:hover > .property-wrap {
+    background-color: rgb(22, 162, 25);
+}
+
+.player-name {
+    font-size: large;
+    background-color: rgba(31,182,34,1);
+    padding: 0.5rem 1rem;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    color: white;
+}
+
+
+.property-wrap {
+    padding: 0.2rem;
+    margin-top: 0.5rem;
+    background-color: rgba(31,182,34,1);
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+}

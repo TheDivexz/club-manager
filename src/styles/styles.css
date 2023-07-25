@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+.background {
+    background-color: #eeeeee;
+}
+
+.squad-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.team-name {
+    text-align: center;
+}
+
+.filter-bar {
+    text-align: center;
+}
+
+.filter-btn {
+    margin: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    background-color: #cff0c5;
+    border-radius: 5px;
+    border: 1px #aaaaaa solid;
+}
+
+.filter-btn:hover {
+    background-color: #b4d7a9;
+    cursor: pointer;
+}
+
+.filter-btn:active {
+    background-color: #9cc490;
+}
