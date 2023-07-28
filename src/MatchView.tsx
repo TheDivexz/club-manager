@@ -18,6 +18,9 @@ const MatchView = () => {
     const [teamTwoPlayers,setTeamTwoPlayers] = useState<number[]>([]);
 
     const [rowMask,setRowMask] = useState<number[][]>([[0,9],[0,9],[0,9],[0,9],[0,9]])
+    const [gameStarted,setGameStart] = useState(false);
+    // False means Player Two's turn and True means player One's turn
+    const [currentTurn, setCurrentTurn] = useState(true);
 
     const colNumbersArray = Array.from({ length: 10 }, (_, index) => index);
     const rowNumbersArray = Array.from({ length: 5 }, (_, index) => index);
@@ -50,7 +53,24 @@ const MatchView = () => {
             if(member.starter) {
                 setTeamTwoPlayers(oldArray => [...oldArray,index])
             }
-        })   
+        })
+        setGameStart(true)  
+    }
+    const getRandomInt = (max: number) => Math.floor(Math.random() * max);
+
+    const randomizePlacements = () => {
+        let new_placements = [[0,0],[0,0],[0,0],[0,0],[0,0]]
+        for (let i = 0; i < new_placements.length; i++) {
+            const rand_val = getRandomInt(4) + ((currentTurn ? 1 : 0) * 4)
+            new_placements[i][0] = rand_val
+            new_placements[i][1] = rand_val + 1
+        }
+        setRowMask(new_placements)
+    }
+
+    const nextTurn = () => {
+        randomizePlacements()
+        setCurrentTurn(!currentTurn)
     }
 
     return (
@@ -64,6 +84,7 @@ const MatchView = () => {
                 rowNumbersArray.map(row_num => {
                     return (
                         <div key={row_num} className="row">
+                            {/* Makes the table */}
                             {
                                 colNumbersArray.map(number => {
                                     return (
@@ -90,7 +111,12 @@ const MatchView = () => {
             }
             <h3 className="text-center">{teamOneScore} :: Score :: {teamTwoScore}</h3>
             <div className="justify-center">
-                <button className="start-btn" onClick={simulateSetup}>START</button>
+                {
+                    gameStarted ?
+                        <button className="start-btn" onClick={nextTurn}>NEXT TURN</button>
+                        :
+                        <button className="start-btn" onClick={simulateSetup}>START</button>
+                }
             </div>
         </div>
     )
