@@ -22,6 +22,8 @@ const MatchView = () => {
     // False means Player Two's turn and True means player One's turn
     const [currentTurn, setCurrentTurn] = useState(true);
 
+    const [commentary,setCommentary] = useState<String[]>([]);
+
     const colNumbersArray = Array.from({ length: 10 }, (_, index) => index);
     const rowNumbersArray = Array.from({ length: 5 }, (_, index) => index);
 
@@ -68,8 +70,45 @@ const MatchView = () => {
         setRowMask(new_placements)
     }
 
+    const calcCommentary = (team_one_player_id: number, team_two_player_id: number,attack_success:boolean,did_score:boolean) => {
+        const first_player = currentTurn ? teamOneSquad[team_one_player_id].name : teamTwoSquad[team_two_player_id].name
+        const second_player = currentTurn ? teamTwoSquad[team_two_player_id].name : teamOneSquad[team_one_player_id].name
+        const got_blocked = attack_success ? ' shoots ' : ` shoots and gets blocked by ${second_player}.`
+        const missed_shot = attack_success ? (did_score ? ' and scores! ' : ' and misses.') : ''
+        const newComment = `${first_player} ${got_blocked} ${missed_shot}`
+        setCommentary([newComment,...commentary])
+    }
+
+    const scoreing = () => {
+        const playing_row = getRandomInt(4)
+        const team_one_player_id = teamOnePlayers[playing_row]
+        const team_two_player_id = teamTwoPlayers[playing_row]
+        let attack_success = false
+        let did_score = false
+        if (currentTurn) {
+            const total = teamOneSquad[team_one_player_id].attack + teamTwoSquad[team_two_player_id].defense
+            const actual = getRandomInt(total)
+            attack_success = actual <= teamOneSquad[team_one_player_id].attack
+            did_score = attack_success && (Math.random() <= (teamOneSquad[team_one_player_id].accuracy/255))
+            if(did_score) {
+                setTeamOneScore(teamOneScore + 1)
+            }
+        }
+        else {
+            const total = teamTwoSquad[team_two_player_id].attack + teamOneSquad[team_one_player_id].defense
+            const actual = getRandomInt(total)
+            attack_success = actual <= teamTwoSquad[team_two_player_id].attack
+            did_score = attack_success && (Math.random() <= (teamTwoSquad[team_two_player_id].accuracy/255))
+            if (did_score) {
+                setTeamTwoScore(teamTwoScore + 1)
+            }
+        }
+        calcCommentary(team_one_player_id,team_two_player_id,attack_success,did_score)
+    }
+
     const nextTurn = () => {
         randomizePlacements()
+        scoreing()
         setCurrentTurn(!currentTurn)
     }
 
@@ -118,6 +157,9 @@ const MatchView = () => {
                         <button className="start-btn" onClick={simulateSetup}>START</button>
                 }
             </div>
+            {commentary.map((comment,index) => {return (
+                <p key={index}>{comment}</p>
+            )})}
         </div>
     )
 }
