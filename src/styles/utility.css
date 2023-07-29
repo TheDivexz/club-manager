@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.v-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.h-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.blue-text {
+    color: blue;
+}
+
+.red-text {
+    color: red;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+
+.justify-center {
+    text-align: center;
+    justify-content: center;
+}
+
+.background {
+    background-color: #eeeeee;
+}
+
+.btn-green {
+    padding: 1rem;
+    margin-bottom: 0.1rem;
+    background-color: rgba(31,182,34,1);
+    border-radius: 5px;
+    border: none;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.btn-green:hover {
+    background-color: rgb(22, 162, 25);
+    cursor: pointer;
+}
+
+.btn-green:active {
+    background-color: rgb(14, 128, 16);
+}

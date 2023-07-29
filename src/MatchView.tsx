@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri";
 import './styles/match_view.css'
 import { playerObject } from "./playerObject";
+import './styles/utility.css'
 
 const MatchView = () => {
 
