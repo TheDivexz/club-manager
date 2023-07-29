@@ -24,6 +24,8 @@ const MatchView = () => {
 
     const [commentary,setCommentary] = useState<String[]>([]);
 
+    const [winner,setWinner] = useState(0);
+
     const colNumbersArray = Array.from({ length: 10 }, (_, index) => index);
     const rowNumbersArray = Array.from({ length: 5 }, (_, index) => index);
 
@@ -107,9 +109,22 @@ const MatchView = () => {
     }
 
     const nextTurn = () => {
+        if(winner !== 0) {
+            return
+        }
         randomizePlacements()
         scoreing()
         setCurrentTurn(!currentTurn)
+        checkWinner()
+    }
+
+    const checkWinner = () => {
+        if (teamOneScore >= 21) {
+            setWinner(1)
+        }
+        else if (teamTwoScore >= 21) {
+            setWinner(2)
+        }
     }
 
     return (
@@ -130,15 +145,15 @@ const MatchView = () => {
                                         number < 5 ? 
                                         (
                                             <div key={number} className="box square-blue">
-                                                { rowMask[row_num][0] == number && teamOnePlayers[1] ? teamOneSquad[teamOnePlayers[row_num]].name : '' }
-                                                { rowMask[row_num][1] == number && teamTwoPlayers[1] ? teamTwoSquad[teamTwoPlayers[row_num]].name : '' }
+                                                <p>{ rowMask[row_num][0] == number && teamOnePlayers[1] ? teamOneSquad[teamOnePlayers[row_num]].name : '' }</p>
+                                                <p>{ rowMask[row_num][1] == number && teamTwoPlayers[1] ? teamTwoSquad[teamTwoPlayers[row_num]].name : '' }</p>
                                             </div>
                                         )
                                         :
                                         (
                                             <div key={number} className="box square-red">
-                                                { rowMask[row_num][0] == number && teamOnePlayers[1] ? teamOneSquad[teamOnePlayers[row_num]].name : '' }
-                                                { rowMask[row_num][1] == number && teamTwoPlayers[1] ? teamTwoSquad[teamTwoPlayers[row_num]].name : '' }
+                                            <p>{ rowMask[row_num][0] == number && teamOnePlayers[1] ? teamOneSquad[teamOnePlayers[row_num]].name : '' }</p>
+                                            <p>{ rowMask[row_num][1] == number && teamTwoPlayers[1] ? teamTwoSquad[teamTwoPlayers[row_num]].name : '' }</p>
                                             </div>
                                         )
                                     )
@@ -151,14 +166,20 @@ const MatchView = () => {
             <h3 className="text-center">{teamOneScore} :: Score :: {teamTwoScore}</h3>
             <div className="justify-center">
                 {
-                    gameStarted ?
-                        <button className="start-btn" onClick={nextTurn}>NEXT TURN</button>
+                    winner === 0 ? (
+                        gameStarted ?
+                        <div>
+                            <button className="start-btn" onClick={nextTurn}>NEXT TURN</button>
+                        </div>
                         :
                         <button className="start-btn" onClick={simulateSetup}>START</button>
+                    ) : (
+                        <h1 className="text-center">{winner === 1 ? teamOneName : teamTwoName} WINS!</h1>
+                    )
                 }
             </div>
             {commentary.map((comment,index) => {return (
-                <p key={index}>{comment}</p>
+                <p key={index} className="comment">{comment}</p>
             )})}
         </div>
     )
