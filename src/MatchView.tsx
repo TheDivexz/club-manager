@@ -129,7 +129,7 @@ const MatchView = () => {
     }
 
     return (
-        <div className="match-view background">
+        <div className="match-view background vw-80">
             <span className="title-bar">
                 <h2 className="blue-text">{teamOneName}</h2>
                 <h2 className="red-text">{teamTwoName}</h2>

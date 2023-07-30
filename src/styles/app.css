@@ -1,0 +1,11 @@
+.border-green {
+    width: 100vw;
+    height: 100vh;
+    border: 5px solid rgba(31,182,34,1);
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+}

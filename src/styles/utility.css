@@ -61,3 +61,11 @@
 .btn-green:active {
     background-color: rgb(14, 128, 16);
 }
+
+.vw-100 {
+    width: 100vw;
+}
+
+.vw-85 {
+    width: calc(85vw - 5px);
+}

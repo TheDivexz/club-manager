@@ -3,6 +3,7 @@ import SquadView from "./squadview";
 import MatchView from "./MatchView";
 import MainSideBar from "./MainSidebar";
 import './styles/utility.css'
+import './styles/app.css'
 
 const App = () => {
 
@@ -13,9 +14,10 @@ const App = () => {
     }
     return (
         <div className="h-flex">
-            <div className="main-sidebar"><MainSideBar whichView={handleCurrentView}/></div>
-            {currentView === 0 ? <SquadView /> : ''}
-            {currentView === 1 ? <MatchView /> : ''}
+            <div className="border-green"></div>
+            <div className=""><MainSideBar whichView={handleCurrentView}/></div>
+            <div className="">{currentView === 0 ? <SquadView /> : ''}</div>
+            <div className="">{currentView === 1 ? <MatchView /> : ''}</div>
         </div>
     )
 }

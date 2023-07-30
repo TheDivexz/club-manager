@@ -33,7 +33,7 @@ const SquadView = () => {
     },[])
 
     return (
-        <div className="background">
+        <div className="background vw-85">
             <h1 className="team-name">{teamName}</h1>
             <div className="filter-bar">
                 <span>Card View: </span>
