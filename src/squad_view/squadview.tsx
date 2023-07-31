@@ -1,18 +1,22 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri";
-import { playerObject } from "./playerObject";
+import { playerObject } from "../interfaces/playerObject";
 import PlayerCard from "./PlayerCard";
-import './styles/styles.css'
+import '../styles/styles.css'
 
-const SquadView = () => {
+interface SquadViewProps {
+    playerTeam: number
+}
+
+const SquadView: React.FC<SquadViewProps> = ({playerTeam}) => {
 
     const [squad,setSquad] = useState<playerObject[]>([]);
     const [teamName,setTeamName] = useState("");
     const [detailedView, setDetailedView] = useState(false)
 
     async function getSquad() {
-        setSquad(await invoke("get_players_in_team", {teamId: 0}));
-        setTeamName(await invoke("get_team_name",{teamId: 0}));
+        setSquad(await invoke("get_players_in_team", {teamId: playerTeam}));
+        setTeamName(await invoke("get_team_name",{teamId: playerTeam}));
     }
 
     const sortByAttack = () => { setSquad([...squad].sort((a,b) => b.attack - a.attack)) }

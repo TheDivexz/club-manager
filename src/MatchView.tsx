@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri";
 import './styles/match_view.css'
-import { playerObject } from "./playerObject";
+import { playerObject } from "./interfaces/playerObject";
 import './styles/utility.css'
 
-const MatchView = () => {
+interface MatchViewProps {
+    teamOne: number,
+}
+
+const MatchView: React.FC<MatchViewProps> = ({teamOne}) => {
 
     const [teamOneName,setTeamOneName] = useState("");
     const [teamOneSquad,setTeamOneSquad] = useState<playerObject[]>([]);
@@ -31,12 +35,12 @@ const MatchView = () => {
     const rowNumbersArray = Array.from({ length: 5 }, (_, index) => index);
 
     async function setTeamNames() {
-        setTeamOneName(await invoke("get_team_name",{teamId: 0}));
+        setTeamOneName(await invoke("get_team_name",{teamId: teamOne}));
         setTeamTwoName(await invoke("get_team_name",{teamId: 1}));
     }
 
     async function setSquads() {
-        setTeamOneSquad(await invoke("get_players_in_team", {teamId: 0}));
+        setTeamOneSquad(await invoke("get_players_in_team", {teamId: teamOne}));
         setTeamTwoSquad(await invoke("get_players_in_team", {teamId: 1}));
     }
 

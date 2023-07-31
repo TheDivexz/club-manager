@@ -238,3 +238,13 @@ pub fn get_team_name(team_id: usize) -> String {
     let test: &String =  &ALL_TEAMS.lock().unwrap()[team_id].name;
     return test.to_string();
 }
+
+#[tauri::command]
+pub fn get_all_team_names() -> Vec<String> {
+    let mut team_names: Vec<String> = vec![];
+    let length: usize = ALL_TEAMS.lock().unwrap().len();
+    for i in 0..length {
+        team_names.push(ALL_TEAMS.lock().unwrap()[i].name.clone());
+    }
+    return team_names;
+}
