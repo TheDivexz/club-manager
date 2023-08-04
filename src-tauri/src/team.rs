@@ -12,6 +12,7 @@ use crate::player::{self, PlayerData};
 struct TeamInfo {
     name: String,
     squad: Vec<Uuid>,
+    lineup: [Uuid; 5]
 }
 
 // Hashmap that stores all the players that exist
@@ -48,26 +49,19 @@ fn get_name(name_struct: &Names) -> String {
     return format!("{} {}",first_name,last_name);
 }
 
-// Sets the first characters as starters per team
-fn set_starters() {
-    let length: usize = ALL_TEAMS.lock().unwrap().len();
-    for i in 0..length {
-        for j in 0..5 {
-            let player_id = ALL_TEAMS.lock().unwrap()[i].squad[j];
-            let mut all_players = player::ALL_PLAYERS.lock().unwrap();
-            // Check if the player_id exists in the HashMap
-            if let Some(player_data) = all_players.get_mut(&player_id) {
-                // Modify the entry with the new values
-                player_data.starter = true;
-                // Release the lock explicitly (it will be automatically released when 'all_players' goes out of scope)
-                drop(all_players);
-            } else {
-                // Handle the case when the player_id is not found
-                println!("Player not found!");
-            }
-        }
+fn new_team(new_name: String,name_list: &Names) {
+    let mut squad: Vec<Uuid> = Vec::new();
+    for _ in 0..15 {
+        let player_name = get_name(name_list);
+        squad.push(player::generate_new_player(player_name));
     }
+    ALL_TEAMS.lock().unwrap().push(TeamInfo {
+        name: new_name,
+        squad: squad.clone(),
+        lineup: [squad[0],squad[1],squad[2],squad[3],squad[4]]
+    });
 }
+
 
 pub fn generate_teams() {
     let file_path = Path::new("names/USA.json");
@@ -77,145 +71,37 @@ pub fn generate_teams() {
 
     let name_list: Names = serde_json::from_str(&contents).expect("Failed to deserialize JSON");
 
-    
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Sacred Band of Thieves".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Albany Senators".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Santa Cruz Homeless".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Olgimsky United".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Skullcrushers FC".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Bluberry Time".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Simping Poets".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Lund Leftovers".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Lund Leftovers 2".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Maryland Mass Murderes".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 11".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 12".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 13".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 14".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 15".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 16".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 17".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 18".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 19".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 20".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 21".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 22".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 23".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 24".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 25".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 26".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 27".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 28".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 29".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 30".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 31".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-    ALL_TEAMS.lock().unwrap().push(TeamInfo {
-        name: "Team 32".to_string(),
-        squad: vec![player::generate_new_player(get_name(&name_list))]
-    });
-
-    // Loops over all teams and adds additional 14 players
-    let length: usize = ALL_TEAMS.lock().unwrap().len();
-    for i in 0..length {
-        for _j in 0..14 {
-            ALL_TEAMS.lock().unwrap()[i].squad.push(player::generate_new_player(get_name(&name_list)));
-        }
-    }
-
-    set_starters();
+    new_team("Sacred Band of Thieves".to_string(),&name_list);
+    new_team("Albany Senators".to_string(),&name_list);
+    new_team("Santa Cruz Homeless".to_string(),&name_list);
+    new_team("Olgimsky United".to_string(),&name_list);
+    new_team("Bluberry Time".to_string(),&name_list);
+    new_team("Simping Poets".to_string(),&name_list);
+    new_team("Lund Leftovers".to_string(),&name_list);
+    new_team("Lund Leftovers 2".to_string(),&name_list);
+    new_team("Maryland Mass Murderes".to_string(),&name_list);
+    new_team("Team 11".to_string(),&name_list);
+    new_team("Team 12".to_string(),&name_list);
+    new_team("Team 13".to_string(),&name_list);
+    new_team("Team 14".to_string(),&name_list);
+    new_team("Team 15".to_string(),&name_list);
+    new_team("Team 16".to_string(),&name_list);
+    new_team("Team 17".to_string(),&name_list);
+    new_team("Team 18".to_string(),&name_list);
+    new_team("Team 19".to_string(),&name_list);
+    new_team("Team 20".to_string(),&name_list);
+    new_team("Team 21".to_string(),&name_list);
+    new_team("Team 22".to_string(),&name_list);
+    new_team("Team 23".to_string(),&name_list);
+    new_team("Team 24".to_string(),&name_list);
+    new_team("Team 25".to_string(),&name_list);
+    new_team("Team 26".to_string(),&name_list);
+    new_team("Team 27".to_string(),&name_list);
+    new_team("Team 28".to_string(),&name_list);
+    new_team("Team 29".to_string(),&name_list);
+    new_team("Team 30".to_string(),&name_list);
+    new_team("Team 31".to_string(),&name_list);
+    new_team("Team 32".to_string(),&name_list);
 
 }
 
@@ -247,4 +133,16 @@ pub fn get_all_team_names() -> Vec<String> {
         team_names.push(ALL_TEAMS.lock().unwrap()[i].name.clone());
     }
     return team_names;
+}
+
+#[tauri::command]
+pub fn get_team_lineup(team_id: usize) -> Vec<PlayerData> {
+    let mut lineup: Vec<PlayerData> = vec![];
+    let current_lineup: &[Uuid; 5] = &ALL_TEAMS.lock().unwrap()[team_id].lineup;
+    for i in 0..5 {
+        let current_player_id: Uuid = current_lineup[i];
+        let current_player = player::ALL_PLAYERS.lock().unwrap().get(&current_player_id).expect("Player Not Found").clone();
+        lineup.push(current_player);
+    }
+    return lineup;
 }

@@ -16,7 +16,8 @@ fn main() {
             greet,
             team::get_players_in_team,
             team::get_team_name,
-            team::get_all_team_names
+            team::get_all_team_names,
+            team::get_team_lineup,
             ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
