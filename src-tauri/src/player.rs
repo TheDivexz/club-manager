@@ -12,12 +12,26 @@ use std::clone::Clone;
 pub struct PlayerData {
     pub name: String,
     player_id: String,
+    // What is the chance that the player will make a shot
     accuracy: u8,
     max_accuracy: u8,
+    // higher the attack the higher chance to break through defense
     attack: u8,
     max_attack: u8,
+    // higher the defense the higher chance to block a shot
     defense: u8,
     max_defense: u8,
+    // higher the pass the higher che chance to successfully pass the ball
+    pass: u8,
+    max_pass: u8,
+    // higher the steal the higher chance to steal the ball during a pass
+    steal: u8,
+    max_steal: u8,
+    // higher the game sense the higher chance to make a good decision
+    game_sense: u8,
+    max_game_sense: u8,
+    // higher the ego the higher chance to make a bad decision despite game sense
+    ego: u8,
     pub starter: bool
 }
 
@@ -35,6 +49,13 @@ pub fn generate_new_player(name: String) -> Uuid {
     let max_attack:u8 = rng.gen_range(attack..=u8::MAX);
     let defense:u8 = rng.gen();
     let max_defense:u8 = rng.gen_range(defense..=u8::MAX);
+    let pass:u8 = rng.gen();
+    let max_pass:u8 = rng.gen_range(pass..=u8::MAX);
+    let steal:u8 = rng.gen();
+    let max_steal:u8 = rng.gen_range(steal..=u8::MAX);
+    let game_sense:u8 = rng.gen();
+    let max_game_sense:u8 = rng.gen_range(game_sense..=u8::MAX);
+    let ego:u8 = rng.gen();
     let player_id: Uuid = Uuid::new_v4();
 
     ALL_PLAYERS.lock().unwrap().insert(player_id, PlayerData {
@@ -46,6 +67,13 @@ pub fn generate_new_player(name: String) -> Uuid {
         max_attack,
         defense,
         max_defense,
+        pass,
+        max_pass,
+        steal,
+        max_steal,
+        game_sense,
+        max_game_sense,
+        ego,
         starter: false
     });
 
