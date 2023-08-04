@@ -19,9 +19,6 @@ const MatchView: React.FC<MatchViewProps> = ({teamOne}) => {
     const [teamOneScore,setTeamOneScore] = useState(0);
     const [teamTwoScore,setTeamTwoScore] = useState(0);
 
-    const [teamOnePlayers,setTeamOnePlayers] = useState<number[]>([]);
-    const [teamTwoPlayers,setTeamTwoPlayers] = useState<number[]>([]);
-
     const [rowMask,setRowMask] = useState<number[][]>([[0,9],[0,9],[0,9],[0,9],[0,9]])
     const [gameStarted,setGameStart] = useState(false);
     // False means Player Two's turn and True means player One's turn
@@ -40,8 +37,10 @@ const MatchView: React.FC<MatchViewProps> = ({teamOne}) => {
     }
 
     async function setSquads() {
-        setTeamOneSquad(await invoke("get_players_in_team", {teamId: teamOne}));
-        setTeamTwoSquad(await invoke("get_players_in_team", {teamId: 1}));
+        setTeamOneSquad(await invoke("get_team_lineup", {teamId: teamOne}));
+        setTeamTwoSquad(await invoke("get_team_lineup", {teamId: 1}));
+        console.log();
+        
     }
 
     useEffect(() => {
@@ -50,19 +49,6 @@ const MatchView: React.FC<MatchViewProps> = ({teamOne}) => {
     },[])
 
     const simulateSetup = () => {
-        setTeamOnePlayers([])
-        setTeamTwoPlayers([])
-        teamOneSquad.map((member,index) => {     
-            if(member.starter) {
-                setTeamOnePlayers(oldArray => [...oldArray,index])
-            }
-        })
-
-        teamTwoSquad.map((member,index) => {     
-            if(member.starter) {
-                setTeamTwoPlayers(oldArray => [...oldArray,index])
-            }
-        })
         setGameStart(true)  
     }
     const getRandomInt = (max: number) => Math.floor(Math.random() * max);
@@ -87,30 +73,31 @@ const MatchView: React.FC<MatchViewProps> = ({teamOne}) => {
     }
 
     const scoreing = () => {
-        const playing_row = getRandomInt(4)
-        const team_one_player_id = teamOnePlayers[playing_row]
-        const team_two_player_id = teamTwoPlayers[playing_row]
-        let attack_success = false
-        let did_score = false
-        if (currentTurn) {
-            const total = teamOneSquad[team_one_player_id].attack + teamTwoSquad[team_two_player_id].defense
-            const actual = getRandomInt(total)
-            attack_success = actual <= teamOneSquad[team_one_player_id].attack
-            did_score = attack_success && (Math.random() <= (teamOneSquad[team_one_player_id].accuracy/255))
-            if(did_score) {
-                setTeamOneScore(teamOneScore + 1)
-            }
-        }
-        else {
-            const total = teamTwoSquad[team_two_player_id].attack + teamOneSquad[team_one_player_id].defense
-            const actual = getRandomInt(total)
-            attack_success = actual <= teamTwoSquad[team_two_player_id].attack
-            did_score = attack_success && (Math.random() <= (teamTwoSquad[team_two_player_id].accuracy/255))
-            if (did_score) {
-                setTeamTwoScore(teamTwoScore + 1)
-            }
-        }
-        calcCommentary(team_one_player_id,team_two_player_id,attack_success,did_score)
+        // const playing_row = getRandomInt(4)
+        // const team_one_player_id = teamOnePlayers[playing_row]
+        // const team_two_player_id = teamTwoPlayers[playing_row]
+        // let attack_success = false
+        // let did_score = false
+        // if (currentTurn) {
+        //     console.log(teamOnePlayers)
+        //     const total = teamOneSquad[team_one_player_id].attack + teamTwoSquad[team_two_player_id].defense
+        //     const actual = getRandomInt(total)
+        //     attack_success = actual <= teamOneSquad[team_one_player_id].attack
+        //     did_score = attack_success && (Math.random() <= (teamOneSquad[team_one_player_id].accuracy/255))
+        //     if(did_score) {
+        //         setTeamOneScore(teamOneScore + 1)
+        //     }
+        // }
+        // else {
+        //     const total = teamTwoSquad[team_two_player_id].attack + teamOneSquad[team_one_player_id].defense
+        //     const actual = getRandomInt(total)
+        //     attack_success = actual <= teamTwoSquad[team_two_player_id].attack
+        //     did_score = attack_success && (Math.random() <= (teamTwoSquad[team_two_player_id].accuracy/255))
+        //     if (did_score) {
+        //         setTeamTwoScore(teamTwoScore + 1)
+        //     }
+        // }
+        // calcCommentary(team_one_player_id,team_two_player_id,attack_success,did_score)
     }
 
     const nextTurn = () => {
@@ -121,6 +108,7 @@ const MatchView: React.FC<MatchViewProps> = ({teamOne}) => {
         scoreing()
         setCurrentTurn(!currentTurn)
         checkWinner()
+        
     }
 
     const checkWinner = () => {
@@ -150,15 +138,15 @@ const MatchView: React.FC<MatchViewProps> = ({teamOne}) => {
                                         number < 5 ? 
                                         (
                                             <div key={number} className="box square-blue">
-                                                <p>{ rowMask[row_num][0] == number && teamOnePlayers[1] ? teamOneSquad[teamOnePlayers[row_num]].name : '' }</p>
-                                                <p>{ rowMask[row_num][1] == number && teamTwoPlayers[1] ? teamTwoSquad[teamTwoPlayers[row_num]].name : '' }</p>
+                                                <p>{ rowMask[row_num][0] == number && teamOneSquad.length !== 0 ? teamOneSquad[row_num].name : '' }</p>
+                                                <p>{ rowMask[row_num][1] == number && teamTwoSquad.length !== 0  ? teamTwoSquad[row_num].name : '' }</p>
                                             </div>
                                         )
                                         :
                                         (
                                             <div key={number} className="box square-red">
-                                            <p>{ rowMask[row_num][0] == number && teamOnePlayers[1] ? teamOneSquad[teamOnePlayers[row_num]].name : '' }</p>
-                                            <p>{ rowMask[row_num][1] == number && teamTwoPlayers[1] ? teamTwoSquad[teamTwoPlayers[row_num]].name : '' }</p>
+                                            <p>{ rowMask[row_num][0] == number && teamOneSquad.length !== 0  ? teamOneSquad[row_num].name : '' }</p>
+                                            <p>{ rowMask[row_num][1] == number && teamTwoSquad.length !== 0  ? teamTwoSquad[row_num].name : '' }</p>
                                             </div>
                                         )
                                     )
