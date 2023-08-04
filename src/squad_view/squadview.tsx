@@ -21,13 +21,11 @@ const SquadView: React.FC<SquadViewProps> = ({playerTeam}) => {
 
     const sortByAttack = () => { setSquad([...squad].sort((a,b) => b.attack - a.attack)) }
     const sortByDefense = () => { setSquad([...squad].sort((a,b) => b.defense - a.defense)) }
-    const sortBySpeed = () => { setSquad([...squad].sort((a,b) => b.speed - a.speed)) }
     const sortByAccuracy = () => { setSquad([...squad].sort((a,b) => b.accuracy - a.accuracy)) }
-    const sortByStamina = () => { setSquad([...squad].sort((a,b) => b.stamina - a.stamina)) } 
     const sortByAverage = () => {
         setSquad([...squad].sort((a,b) => {
-            const a_avg = (a.attack + a.defense + a.speed + a.accuracy + a.stamina)/5
-            const b_avg = (b.attack + b.defense + b.speed + b.accuracy + b.stamina)/5
+            const a_avg = (a.attack + a.defense + a.accuracy)/3
+            const b_avg = (b.attack + b.defense + b.accuracy)/3
             return b_avg - a_avg;
         }))
     }
@@ -48,9 +46,7 @@ const SquadView: React.FC<SquadViewProps> = ({playerTeam}) => {
                 <span>Filter By: </span>
                 <button className="filter-btn" onClick={sortByAttack}>Attack</button>
                 <button className="filter-btn" onClick={sortByDefense}>Defense</button>
-                <button className="filter-btn" onClick={sortBySpeed}>Speed</button>
                 <button className="filter-btn" onClick={sortByAccuracy}>Accuracy</button>
-                <button className="filter-btn" onClick={sortByStamina}>Stamina</button>
                 <button className="filter-btn" onClick={sortByAverage}>Average</button>
             </div>
             <div className="squad-view">
