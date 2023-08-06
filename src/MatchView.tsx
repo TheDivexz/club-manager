@@ -72,7 +72,7 @@ const MatchView: React.FC<MatchViewProps> = ({teamOne}) => {
         else {
             results = await invoke("simulate_turn",{offenseTeam: teamTwoSquad, defenseTeam: teamOneSquad})
         }
-        if (results[0] == true) {
+        if (results[0] === true) {
             if (currentTurn) {
                 setTeamOneScore(teamOneScore + 1)
             }
@@ -121,15 +121,15 @@ const MatchView: React.FC<MatchViewProps> = ({teamOne}) => {
                                         number < 5 ? 
                                         (
                                             <div key={number} className="box square-blue">
-                                                <p>{ rowMask[row_num][0] == number && teamOneSquad.length !== 0 ? teamOneSquad[row_num].name : '' }</p>
-                                                <p>{ rowMask[row_num][1] == number && teamTwoSquad.length !== 0  ? teamTwoSquad[row_num].name : '' }</p>
+                                                <p>{ rowMask[row_num][0] === number && teamOneSquad.length !== 0 ? teamOneSquad[row_num].name : '' }</p>
+                                                <p>{ rowMask[row_num][1] === number && teamTwoSquad.length !== 0  ? teamTwoSquad[row_num].name : '' }</p>
                                             </div>
                                         )
                                         :
                                         (
                                             <div key={number} className="box square-red">
-                                            <p>{ rowMask[row_num][0] == number && teamOneSquad.length !== 0  ? teamOneSquad[row_num].name : '' }</p>
-                                            <p>{ rowMask[row_num][1] == number && teamTwoSquad.length !== 0  ? teamTwoSquad[row_num].name : '' }</p>
+                                            <p>{ rowMask[row_num][0] === number && teamOneSquad.length !== 0  ? teamOneSquad[row_num].name : '' }</p>
+                                            <p>{ rowMask[row_num][1] === number && teamTwoSquad.length !== 0  ? teamTwoSquad[row_num].name : '' }</p>
                                             </div>
                                         )
                                     )
