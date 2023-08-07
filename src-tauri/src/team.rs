@@ -71,37 +71,48 @@ pub fn generate_teams() {
 
     let name_list: Names = serde_json::from_str(&contents).expect("Failed to deserialize JSON");
 
-    new_team("Sacred Band of Thieves".to_string(),&name_list);
-    new_team("Albany Senators".to_string(),&name_list);
-    new_team("Santa Cruz Homeless".to_string(),&name_list);
-    new_team("Olgimsky United".to_string(),&name_list);
-    new_team("Bluberry Time".to_string(),&name_list);
-    new_team("Simping Poets".to_string(),&name_list);
-    new_team("Lund Leftovers".to_string(),&name_list);
-    new_team("Lund Leftovers 2".to_string(),&name_list);
-    new_team("Maryland Mass Murderes".to_string(),&name_list);
-    new_team("Team 11".to_string(),&name_list);
-    new_team("Team 12".to_string(),&name_list);
-    new_team("Team 13".to_string(),&name_list);
-    new_team("Team 14".to_string(),&name_list);
-    new_team("Team 15".to_string(),&name_list);
-    new_team("Team 16".to_string(),&name_list);
-    new_team("Team 17".to_string(),&name_list);
-    new_team("Team 18".to_string(),&name_list);
-    new_team("Team 19".to_string(),&name_list);
-    new_team("Team 20".to_string(),&name_list);
-    new_team("Team 21".to_string(),&name_list);
-    new_team("Team 22".to_string(),&name_list);
-    new_team("Team 23".to_string(),&name_list);
-    new_team("Team 24".to_string(),&name_list);
-    new_team("Team 25".to_string(),&name_list);
-    new_team("Team 26".to_string(),&name_list);
-    new_team("Team 27".to_string(),&name_list);
-    new_team("Team 28".to_string(),&name_list);
-    new_team("Team 29".to_string(),&name_list);
-    new_team("Team 30".to_string(),&name_list);
-    new_team("Team 31".to_string(),&name_list);
-    new_team("Team 32".to_string(),&name_list);
+    // United States Confrence
+    // USC East
+    new_team("Hudson Harbor Hurricanes".to_string(),&name_list);
+    new_team("Florida Flamingos".to_string(),&name_list);
+    new_team("Lynn Lightning".to_string(),&name_list);
+    new_team("Milford Minutemen".to_string(),&name_list);
+    // USC North
+    new_team("Pennsylvania Panthers".to_string(),&name_list);
+    new_team("Ohio Outlaws".to_string(),&name_list);
+    new_team("Detroit Dragons".to_string(),&name_list);
+    new_team("Indianapolis Ironclads".to_string(),&name_list);
+    // USC South
+    new_team("Pasadena Phantoms".to_string(),&name_list);
+    new_team("Savannah Storm".to_string(),&name_list);
+    new_team("Memphis Moonwalkers".to_string(),&name_list);
+    new_team("Kentucky Derby Daredevils".to_string(),&name_list);
+    // USC West
+    new_team("Golden Gate Griffins".to_string(),&name_list);
+    new_team("Scottsdale Scorpions".to_string(),&name_list);
+    new_team("Pikes Peak Pioneers".to_string(),&name_list);
+    new_team("Oregon Thunderhawks".to_string(),&name_list);
+    // American Patriot Confrence
+    // APC East
+    new_team("Jersey City Jaguars".to_string(),&name_list);
+    new_team("Roanoke Ravens".to_string(),&name_list);
+    new_team("Maryland Monarchs".to_string(),&name_list);
+    new_team("Seattle Stormchasers".to_string(),&name_list);
+    // APC North
+    new_team("Logan Square Locomotives".to_string(),&name_list);
+    new_team("Waukesha Wolverines".to_string(),&name_list);
+    new_team("St. Paul Spartans".to_string(),&name_list);
+    new_team("Ankeny Arrows".to_string(),&name_list);
+    // APC South
+    new_team("Charlotte Crushers".to_string(),&name_list);
+    new_team("Shreveport Swamp Sirens".to_string(),&name_list);
+    new_team("Columbia Commanders".to_string(),&name_list);
+    new_team("Fort Smith Firebirds".to_string(),&name_list);
+    // APC West
+    new_team("Mississippi Magnolias".to_string(),&name_list);
+    new_team("Joplin Jets".to_string(),&name_list);
+    new_team("Broken Arrow Blazers".to_string(),&name_list);
+    new_team("Puerto Rico Piranhas".to_string(),&name_list);
 
 }
 
