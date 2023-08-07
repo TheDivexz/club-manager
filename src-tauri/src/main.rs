@@ -6,6 +6,8 @@ use std::env;
 mod player;
 mod team;
 mod simulate_turn;
+mod track_date;
+mod on_daily;
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
 fn greet(name: &str) -> String {
@@ -21,6 +23,8 @@ fn main() {
             team::get_team_name,
             team::get_all_team_names,
             team::get_team_lineup,
+            on_daily::on_daily,
+            track_date::get_date_and_day_of_week_string,
             simulate_turn::simulate_turn
             ])
         .run(tauri::generate_context!())
