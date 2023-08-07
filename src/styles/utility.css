@@ -86,3 +86,19 @@ body {
 .width-95 {
     width: 95%;
 }
+
+.margin-bottom-1 {
+    margin-bottom: 1rem;
+}
+
+.margin-half {
+    margin: 0.5rem;
+}
+
+.margin-quarter {
+    margin: 0.25rem;
+}
+
+.padding-half {
+    padding: 0.5rem;
+}

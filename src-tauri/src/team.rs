@@ -71,7 +71,7 @@ pub fn generate_teams() {
 
     let name_list: Names = serde_json::from_str(&contents).expect("Failed to deserialize JSON");
 
-    // United States Confrence
+    // United States Conference
     // USC East
     new_team("Hudson Harbor Hurricanes".to_string(),&name_list);
     new_team("Florida Flamingos".to_string(),&name_list);
@@ -92,7 +92,7 @@ pub fn generate_teams() {
     new_team("Scottsdale Scorpions".to_string(),&name_list);
     new_team("Pikes Peak Pioneers".to_string(),&name_list);
     new_team("Oregon Thunderhawks".to_string(),&name_list);
-    // American Patriot Confrence
+    // American Patriot Conference
     // APC East
     new_team("Jersey City Jaguars".to_string(),&name_list);
     new_team("Roanoke Ravens".to_string(),&name_list);
