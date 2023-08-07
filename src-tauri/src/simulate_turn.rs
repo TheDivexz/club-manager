@@ -1,23 +1,15 @@
 use crate::player::PlayerData;
 use rand::Rng;
 
-fn try_to_pass(passing_player: &PlayerData, pass_blocking_player: &PlayerData, receiving_player: &PlayerData, receive_blocking_player: &PlayerData) -> (bool, String) {
+fn try_to_pass(passing_player: &PlayerData, pass_blocking_player: &PlayerData, receiving_player: &PlayerData, _receive_blocking_player: &PlayerData) -> (bool, String) {
     let mut comment = passing_player.name.clone() + " passes to " + &receiving_player.name;
     let mut rng = rand::thread_rng();
 
     let pass_total_roll = (passing_player.pass as u16) + (pass_blocking_player.steal as u16);
-    let receive_total_roll = (receiving_player.defense as u16) + (receive_blocking_player.steal as u16);
-
     let pass_random_number = rng.gen_range(0..pass_total_roll);
-    let receive_random_number = rng.gen_range(0..receive_total_roll);
 
     if pass_random_number <= passing_player.pass as u16 {
-        if receive_random_number <= receiving_player.defense as u16 {
-            return (true, comment);
-        }
-        comment += "and gets stolen by ";
-        comment += &receive_blocking_player.name;
-        return (false, comment);
+        return (true, comment);
     }
     comment += "and gets stolen by ";
     comment += &pass_blocking_player.name;
@@ -44,22 +36,20 @@ fn try_to_score(offensive_player: &PlayerData, defensive_player: &PlayerData) ->
     return (false, comment);
 }
 
-fn shoot_or_pass_weight(offensive_player: &PlayerData, defensive_player: &PlayerData, offensive_teammate: &PlayerData, defensive_teammate: &PlayerData) -> i16 {
+fn shoot_or_pass_weight(offensive_player: &PlayerData, defensive_player: &PlayerData, _offensive_teammate: &PlayerData, _defensive_teammate: &PlayerData) -> i16 {
     let shooting_weight = (offensive_player.attack as i16) - (defensive_player.defense as i16);
     let passing_weight = (offensive_player.pass as i16) - (defensive_player.steal as i16);
-    let teammate_weight = (offensive_teammate.defense as i16) - (defensive_teammate.steal as i16);
 
-    return shooting_weight + ((passing_weight + teammate_weight) / 2);
+    return shooting_weight + passing_weight;
 }
 
 // True means shoot, false means pass
-fn shoot_or_pass(offensive_player: &PlayerData, defensive_player: &PlayerData, offensive_teammate: &PlayerData, defensive_teammate: &PlayerData) -> bool {
+fn shoot_or_pass(offensive_player: &PlayerData, defensive_player: &PlayerData, _offensive_teammate: &PlayerData, _defensive_teammate: &PlayerData) -> bool {
     let shooting_weight = (offensive_player.attack as i16) - (defensive_player.defense as i16);
     let passing_weight = (offensive_player.pass as i16) - (defensive_player.steal as i16);
-    let teammate_weight = (offensive_teammate.defense as i16) - (defensive_teammate.steal as i16);
 
     let mut rng = rand::thread_rng();
-    let total_weight = shooting_weight + ((passing_weight + teammate_weight) / 2);
+    let total_weight = shooting_weight + passing_weight;
     if total_weight <= 0 {
         let do_whatever = rng.gen_range(0..=1);
         if do_whatever == 0 {
