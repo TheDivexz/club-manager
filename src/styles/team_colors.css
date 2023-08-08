@@ -292,7 +292,7 @@
 }
 
 .apc-south-text {
-    color: var(--APC-south-tertiary);
+    color: white;
 }
 
 .apc-south-background {
@@ -308,7 +308,7 @@
 }
 
 .apc-east-text {
-    color: var(--APC-east-tertiary);
+    color: black;
 }
 
 .apc-east-background {
@@ -324,7 +324,7 @@
 }
 
 .apc-west-text {
-    color: var(--APC-west-tertiary);
+    color: white;
 }
 
 .apc-west-background {
@@ -374,6 +374,7 @@
 
 .usc-east-LL-btn:hover {
     background-color: var(--USC-east-LL-secondary);
+    color: black;
 }
 
 .usc-east-MM-btn {
@@ -399,11 +400,12 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: var(--USC-north-PP-tertiary);
+    color: white;
 }
 
 .usc-north-PP-btn:hover {
     background-color: var(--USC-north-PP-secondary);
+    color: black;
 }
 
 .usc-north-OO-btn {
@@ -414,7 +416,7 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: var(--USC-north-OO-tertiary);
+    color: white;
 }
 
 .usc-north-OO-btn:hover {
@@ -429,7 +431,7 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: var(--USC-north-DD-tertiary);
+    color: white;
 }
 
 .usc-north-DD-btn:hover {
@@ -444,11 +446,12 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: var(--USC-north-II-tertiary);
+    color: white;
 }
 
 .usc-north-II-btn:hover {
     background-color: var(--USC-north-II-secondary);
+    color: var(--USC-north-II-tertiary)
 }
 
 .usc-south-PP-btn {
@@ -459,7 +462,7 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: var(--USC-south-PP-tertiary);
+    color: white;
 }
 
 .usc-south-PP-btn:hover {
@@ -474,11 +477,12 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: var(--USC-south-SS-tertiary);
+    color: white;
 }
 
 .usc-south-SS-btn:hover {
     background-color: var(--USC-south-SS-secondary);
+    color: #000;
 }
 
 .usc-south-MM-btn {
@@ -489,7 +493,7 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: var(--USC-south-MM-tertiary);
+    color: white;
 }
 
 .usc-south-MM-btn:hover {
@@ -504,7 +508,7 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: var(--USC-south-KDD-tertiary);
+    color: white;
 }
 
 .usc-south-KDD-btn:hover {
@@ -519,11 +523,12 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: var(--USC-west-GGG-tertiary);
+    color: black;
 }
 
 .usc-west-GGG-btn:hover {
     background-color: var(--USC-west-GGG-secondary);
+    color: white;
 }
 
 .usc-west-SS-btn {
@@ -534,11 +539,12 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: var(--USC-west-SS-tertiary);
+    color: black;
 }
 
 .usc-west-SS-btn:hover {
     background-color: var(--USC-west-SS-secondary);
+    color: white;
 }
 
 .usc-west-PPP-btn {
@@ -549,11 +555,12 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: var(--USC-west-PPP-tertiary);
+    color: white;
 }
 
 .usc-west-PPP-btn:hover {
     background-color: var(--USC-west-PPP-secondary);
+    color: black;
 }
 
 .usc-west-OT-btn {
@@ -564,7 +571,7 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: var(--USC-west-OT-tertiary);
+    color: white;
 }
 
 .usc-west-OT-btn:hover {
@@ -584,6 +591,7 @@
 
 .apc-east-JCJ-btn:hover {
     background-color: var(--APC-east-JCJ-secondary);
+    color: white;
 }
 
 .apc-east-RR-btn {
@@ -594,7 +602,7 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: var(--APC-east-RR-tertiary);
+    color: white;
 }
 
 .apc-east-RR-btn:hover {
@@ -609,11 +617,12 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: var(--APC-east-MM-tertiary);
+    color: white;
 }
 
 .apc-east-MM-btn:hover {
     background-color: var(--APC-east-MM-secondary);
+    color: var(--APC-east-MM-tertiary);
 }
 
 .apc-east-SS-btn {
@@ -624,11 +633,12 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: var(--APC-east-SS-tertiary);
+    color: white;
 }
 
 .apc-east-SS-btn:hover {
     background-color: var(--APC-east-SS-secondary);
+    color: var(--APC-east-SS-tertiary)
 }
 
 .apc-north-LSL-btn {
@@ -639,11 +649,12 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: var(--APC-north-LSL-tertiary);
+    color: white;
 }
 
 .apc-north-LSL-btn:hover {
     background-color: var(--APC-north-LSL-secondary);
+    color: black;
 }
 
 .apc-north-WW-btn {
@@ -659,6 +670,7 @@
 
 .apc-north-WW-btn:hover {
     background-color: var(--APC-north-WW-secondary);
+    color: black;
 }
 
 .apc-north-SPS-btn {
@@ -669,11 +681,12 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: var(--APC-north-SPS-tertiary);
+    color: white;
 }
 
 .apc-north-SPS-btn:hover {
     background-color: var(--APC-north-SPS-secondary);
+    color: #000;
 }
 
 .apc-north-AA-btn {
@@ -684,7 +697,7 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: var(--APC-north-AA-tertiary);
+    color: white;
 }
 
 .apc-north-AA-btn:hover {
@@ -699,11 +712,12 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: var(--APC-south-CC-tertiary);
+    color: white;
 }
 
 .apc-south-CC-btn:hover {
     background-color: var(--APC-south-CC-secondary);
+    color: black;
 }
 
 .apc-south-SSS-btn {
@@ -714,7 +728,7 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: var(--APC-south-SSS-tertiary);
+    color: white;
 }
 
 .apc-south-SSS-btn:hover {
@@ -729,11 +743,12 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0,0,0,1);
-    color: var(--APC-south-CCC-tertiary);
+    color: white;
 }
 
 .apc-south-CCC-btn:hover {
     background-color: var(--APC-south-CCC-secondary);
+    color: black;
 }
 
 .apc-south-FSF-btn {
@@ -744,7 +759,7 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: var(--APC-south-FSF-tertiary);
+    color: white;
 }
 
 .apc-south-FSF-btn:hover {
@@ -759,7 +774,7 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0,0,0,1);
-    color: var(--APC-west-MM-tertiary);
+    color: black;
 }
 
 .apc-west-MM-btn:hover {
@@ -774,11 +789,12 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0,0,0,1);
-    color: var(--APC-west-JJ-tertiary);
+    color: white;
 }
 
 .apc-west-JJ-btn:hover {
     background-color: var(--APC-west-JJ-secondary);
+    color: #000;
 }
 
 .apc-west-BAB-btn {
@@ -789,7 +805,7 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0,0,0,1);
-    color: var(--APC-west-BAB-tertiary);
+    color: white;
 }
 
 .apc-west-BAB-btn:hover {
@@ -804,7 +820,7 @@
     border: none;
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: var(--APC-west-PRP-tertiary);
+    color: white;
 }
 
 .apc-west-PRP-btn:hover {
