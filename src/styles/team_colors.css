@@ -10,18 +10,26 @@
     --USC-north-PP-primary: #1C1C1C;
     --USC-north-PP-secondary: #FFD700;
     --USC-north-PP-tertiary: #808080;
+    --USC-north-PP-text-color: #FFFFFF;
+    --USC-north-PP-alt-text-color: #000000;
 
     --USC-north-OO-primary: #1E1E1E;
     --USC-north-OO-secondary: #773B15;
     --USC-north-OO-tertiary: #536878;
+    --USC-north-OO-text-color: #FFFFFF;
+    --USC-north-OO-alt-text-color: #FFFFFF;
 
     --USC-north-DD-primary: #C62828;
     --USC-north-DD-secondary: #00796B;
     --USC-north-DD-tertiary: #333333;
+    --USC-north-DD-text-color: #FFFFFF;
+    --USC-north-DD-alt-text-color: #FFFFFF;
 
     --USC-north-II-primary: #848482;
     --USC-north-II-secondary: #0B0C0C;
     --USC-north-II-tertiary: #D9A741;
+    --USC-north-II-text-color: #FFFFFF;
+    --USC-north-II-alt-text-color: #FFFFFF;
 
     --USC-south-primary: #228B22;
     --USC-south-secondary: #FFD700;
@@ -30,18 +38,26 @@
     --USC-south-PP-primary: #6A0DAD;
     --USC-south-PP-secondary: #1C1C1C;
     --USC-south-PP-tertiary: #666666;
+    --USC-south-PP-text-color: #FFFFFF;
+    --USC-south-PP-alt-text-color: #FFFFFF;
 
     --USC-south-SS-primary: #0079C1;
     --USC-south-SS-secondary: #FFD700;
     --USC-south-SS-tertiary: #B2BEB5;
+    --USC-south-SS-text-color: #FFFFFF;
+    --USC-south-SS-alt-text-color: black;
 
     --USC-south-MM-primary: #6E7B8B;
     --USC-south-MM-secondary: #0059b3;
     --USC-south-MM-tertiary: #FF0033;
+    --USC-south-MM-text-color: #FFFFFF;
+    --USC-south-MM-alt-text-color: #FFFFFF;
 
     --USC-south-KDD-primary: #B59842;
     --USC-south-KDD-secondary: #FF4500;
     --USC-south-KDD-tertiary: #336633;
+    --USC-south-KDD-text-color: #FFFFFF;
+    --USC-south-KDD-alt-text-color: #FFFFFF;
 
     --USC-east-primary: #4169E1;
     --USC-east-secondary: #FF2400;
@@ -50,18 +66,26 @@
     --USC-east-HHH-primary: #000080;
     --USC-east-HHH-secondary: #FF6F61;
     --USC-east-HHH-tertiary: #FFFFFF;
+    --USC-east-HHH-text-color: white;
+    --USC-east-HHH-alt-text-color: white;
 
     --USC-east-FF-primary: #FC8EAC;
     --USC-east-FF-secondary: #40E0D0;
     --USC-east-FF-tertiary: #000;
+    --USC-east-FF-text-color: #000;
+    --USC-east-FF-alt-text-color: #000;
 
     --USC-east-LL-primary: #007BFF;
     --USC-east-LL-secondary: #C0C0C0;
     --USC-east-LL-tertiary: #FFFFFF;
+    --USC-east-LL-text-color: #FFFFFF;
+    --USC-east-LL-alt-text-color: #000;
 
     --USC-east-MM-primary: #BE0018;
     --USC-east-MM-secondary: #0047AB;
     --USC-east-MM-tertiary: #FAEBD7;
+    --USC-east-MM-text-color: #FAEBD7;
+    --USC-east-MM-alt-text-color: #FAEBD7;
 
     --USC-west-primary: #FF4500;
     --USC-west-secondary: #EDC9AF;
@@ -70,18 +94,26 @@
     --USC-west-GGG-primary: #E2B659;
     --USC-west-GGG-secondary: #808080;
     --USC-west-GGG-tertiary: #5F9EA0;
+    --USC-west-GGG-text-color: black;
+    --USC-west-GGG-alt-text-color: white;
 
     --USC-west-SS-primary: #D2B48C;
     --USC-west-SS-secondary: #0B0C0C;
     --USC-west-SS-tertiary: #981E32;
+    --USC-west-SS-text-color: black;
+    --USC-west-SS-alt-text-color: white;
 
     --USC-west-PPP-primary: #1A5276;
     --USC-west-PPP-secondary: #FFC300;
     --USC-west-PPP-tertiary: #6C757D;
+    --USC-west-PPP-text-color: white;
+    --USC-west-PPP-alt-text-color: black;
 
     --USC-west-OT-primary: #474747;
     --USC-west-OT-secondary: #8B7355;
     --USC-west-OT-tertiary: #00539C;
+    --USC-west-OT-text-color: white;
+    --USC-west-OT-alt-text-color: white;
 
     --APC-primary:  #CC0000;
     --APC-secondary: #002244;
@@ -94,18 +126,26 @@
     --APC-north-LSL-primary: #292929;
     --APC-north-LSL-secondary: #808080;
     --APC-north-LSL-tertiary: #FF0000;
+    --APC-north-LSL-text-color: white;
+    --APC-north-LSL-alt-text-color: black;
 
     --APC-north-WW-primary: #0047AB;
     --APC-north-WW-secondary: #C0C0C0;
     --APC-north-WW-tertiary: #FFD700;
+    --APC-north-WW-text-color: #FFD700;
+    --APC-north-WW-alt-text-color: black;
 
     --APC-north-SPS-primary: #C8102E;
     --APC-north-SPS-secondary: #FFD700;
     --APC-north-SPS-tertiary: #C0C0C0;
+    --APC-north-SPS-text-color: white;
+    --APC-north-SPS-alt-text-color: black;
 
     --APC-north-AA-primary: #008000;
     --APC-north-AA-secondary: #FF0000;
     --APC-north-AA-tertiary: #C0C0C0;
+    --APC-north-AA-text-color: white;
+    --APC-north-AA-alt-text-color: white;
 
     --APC-south-primary: #03543F;
     --APC-south-secondary: #B8860B;
@@ -114,18 +154,26 @@
     --APC-south-CC-primary: #36454F;
     --APC-south-CC-secondary: #56A0D3;
     --APC-south-CC-tertiary: #FF3333;
+    --APC-south-CC-text-color: white;
+    --APC-south-CC-alt-text-color: black;
 
     --APC-south-SSS-primary: #006400;
     --APC-south-SSS-secondary: #007BA7;
     --APC-south-SSS-tertiary: #8B5A2B;
+    --APC-south-SSS-text-color: white;
+    --APC-south-SSS-alt-text-color: white;
 
     --APC-south-CCC-primary: #003366;
     --APC-south-CCC-secondary: #D4AF37;
     --APC-south-CCC-tertiary: #808080;
+    --APC-south-CCC-text-color: white;
+    --APC-south-CCC-alt-text-color: black;
 
     --APC-south-FSF-primary: #FF4500;
     --APC-south-FSF-secondary: #E25822;
     --APC-south-FSF-tertiary: #B2BEB5;
+    --APC-south-FSF-text-color: white;
+    --APC-south-FSF-alt-text-color: white;
 
     --APC-east-primary: #9BDDFF;
     --APC-east-secondary: #DC143C;
@@ -134,18 +182,26 @@
     --APC-east-JCJ-primary: #FFD700;
     --APC-east-JCJ-secondary: #008000;
     --APC-east-JCJ-tertiary: #007BA7;
+    --APC-east-JCJ-text-color: #007BA7;
+    --APC-east-JCJ-alt-text-color: white;
 
     --APC-east-RR-primary: #1C1C1C;
     --APC-east-RR-secondary: #663399;
     --APC-east-RR-tertiary: #808080;
+    --APC-east-RR-text-color: white;
+    --APC-east-RR-alt-text-color: white;
 
     --APC-east-MM-primary: #6A0DAD;
     --APC-east-MM-secondary: #D4AF37;
     --APC-east-MM-tertiary: #BF0A30;
+    --APC-east-MM-text-color: white;
+    --APC-east-MM-alt-text-color: white;
 
     --APC-east-SS-primary: #007BA7;
     --APC-east-SS-secondary: #474747;
     --APC-east-SS-tertiary: #FFD700;
+    --APC-east-SS-text-color: white;
+    --APC-east-SS-alt-text-color: white;
 
 
     --APC-west-primary: #B87333;
@@ -155,18 +211,26 @@
     --APC-west-MM-primary: #F8F8FF;
     --APC-west-MM-secondary: #789B73;
     --APC-west-MM-tertiary: #E5C100;
+    --APC-west-MM-text-color: black;
+    --APC-west-MM-alt-text-color: black;
 
     --APC-west-JJ-primary: #1C1C1C;
     --APC-west-JJ-secondary: #87CEEB;
     --APC-west-JJ-tertiary: #C0C0C0;
+    --APC-west-JJ-text-color: white;
+    --APC-west-JJ-alt-text-color: black;
 
     --APC-west-BAB-primary: #FF2400;
     --APC-west-BAB-secondary: #E25822;
     --APC-west-BAB-tertiary: #696969;
+    --APC-west-BAB-text-color: white;
+    --APC-west-BAB-alt-text-color: white;
 
     --APC-west-PRP-primary: #E32636;
     --APC-west-PRP-secondary: #00008B;
     --APC-west-PRP-tertiary: #29AB87;
+    --APC-west-PRP-text-color: white;
+    --APC-west-PRP-alt-text-color: white;
 
 }
 
@@ -329,500 +393,4 @@
 
 .apc-west-background {
     background-color: var(--APC-west-primary);
-}
-
-.usc-east-HHH-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-east-HHH-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: var(--USC-east-HHH-tertiary);
-}
-
-.usc-east-HHH-btn:hover {
-    background-color: var(--USC-east-HHH-secondary);
-}
-
-.usc-east-FF-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-east-FF-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: var(--USC-east-FF-tertiary);
-}
-
-.usc-east-FF-btn:hover {
-    background-color: var(--USC-east-FF-secondary);
-}
-
-.usc-east-LL-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-east-LL-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: var(--USC-east-LL-tertiary);
-}
-
-.usc-east-LL-btn:hover {
-    background-color: var(--USC-east-LL-secondary);
-    color: black;
-}
-
-.usc-east-MM-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-east-MM-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: var(--USC-east-MM-tertiary);
-}
-
-.usc-east-MM-btn:hover {
-    background-color: var(--USC-east-MM-secondary);
-}
-
-.usc-north-PP-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-north-PP-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: white;
-}
-
-.usc-north-PP-btn:hover {
-    background-color: var(--USC-north-PP-secondary);
-    color: black;
-}
-
-.usc-north-OO-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-north-OO-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: white;
-}
-
-.usc-north-OO-btn:hover {
-    background-color: var(--USC-north-OO-secondary);
-}
-
-.usc-north-DD-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-north-DD-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: white;
-}
-
-.usc-north-DD-btn:hover {
-    background-color: var(--USC-north-DD-secondary);
-}
-
-.usc-north-II-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-north-II-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: white;
-}
-
-.usc-north-II-btn:hover {
-    background-color: var(--USC-north-II-secondary);
-    color: var(--USC-north-II-tertiary)
-}
-
-.usc-south-PP-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-south-PP-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: white;
-}
-
-.usc-south-PP-btn:hover {
-    background-color: var(--USC-south-PP-secondary);
-}
-
-.usc-south-SS-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-south-SS-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: white;
-}
-
-.usc-south-SS-btn:hover {
-    background-color: var(--USC-south-SS-secondary);
-    color: #000;
-}
-
-.usc-south-MM-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-south-MM-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: white;
-}
-
-.usc-south-MM-btn:hover {
-    background-color: var(--USC-south-MM-secondary);
-}
-
-.usc-south-KDD-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-south-KDD-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: white;
-}
-
-.usc-south-KDD-btn:hover {
-    background-color: var(--USC-south-KDD-secondary);
-}
-
-.usc-west-GGG-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-west-GGG-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: black;
-}
-
-.usc-west-GGG-btn:hover {
-    background-color: var(--USC-west-GGG-secondary);
-    color: white;
-}
-
-.usc-west-SS-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-west-SS-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: black;
-}
-
-.usc-west-SS-btn:hover {
-    background-color: var(--USC-west-SS-secondary);
-    color: white;
-}
-
-.usc-west-PPP-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-west-PPP-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: white;
-}
-
-.usc-west-PPP-btn:hover {
-    background-color: var(--USC-west-PPP-secondary);
-    color: black;
-}
-
-.usc-west-OT-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--USC-west-OT-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: white;
-}
-
-.usc-west-OT-btn:hover {
-    background-color: var(--USC-west-OT-secondary);
-}
-
-.apc-east-JCJ-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-east-JCJ-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: var(--APC-east-JCJ-tertiary);
-}
-
-.apc-east-JCJ-btn:hover {
-    background-color: var(--APC-east-JCJ-secondary);
-    color: white;
-}
-
-.apc-east-RR-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-east-RR-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: white;
-}
-
-.apc-east-RR-btn:hover {
-    background-color: var(--APC-east-RR-secondary);
-}
-
-.apc-east-MM-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-east-MM-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: white;
-}
-
-.apc-east-MM-btn:hover {
-    background-color: var(--APC-east-MM-secondary);
-    color: var(--APC-east-MM-tertiary);
-}
-
-.apc-east-SS-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-east-SS-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: white;
-}
-
-.apc-east-SS-btn:hover {
-    background-color: var(--APC-east-SS-secondary);
-    color: var(--APC-east-SS-tertiary)
-}
-
-.apc-north-LSL-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-north-LSL-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: white;
-}
-
-.apc-north-LSL-btn:hover {
-    background-color: var(--APC-north-LSL-secondary);
-    color: black;
-}
-
-.apc-north-WW-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-north-WW-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: var(--APC-north-WW-tertiary);
-}
-
-.apc-north-WW-btn:hover {
-    background-color: var(--APC-north-WW-secondary);
-    color: black;
-}
-
-.apc-north-SPS-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-north-SPS-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: white;
-}
-
-.apc-north-SPS-btn:hover {
-    background-color: var(--APC-north-SPS-secondary);
-    color: #000;
-}
-
-.apc-north-AA-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-north-AA-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: white;
-}
-
-.apc-north-AA-btn:hover {
-    background-color: var(--APC-north-AA-secondary);
-}
-
-.apc-south-CC-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-south-CC-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0,0,0,1); 
-    color: white;
-}
-
-.apc-south-CC-btn:hover {
-    background-color: var(--APC-south-CC-secondary);
-    color: black;
-}
-
-.apc-south-SSS-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-south-SSS-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1); 
-    color: white;
-}
-
-.apc-south-SSS-btn:hover {
-    background-color: var(--APC-south-SSS-secondary);
-}
-
-.apc-south-CCC-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-south-CCC-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0,0,0,1);
-    color: white;
-}
-
-.apc-south-CCC-btn:hover {
-    background-color: var(--APC-south-CCC-secondary);
-    color: black;
-}
-
-.apc-south-FSF-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-south-FSF-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: white;
-}
-
-.apc-south-FSF-btn:hover {
-    background-color: var(--APC-south-FSF-secondary);
-}
-
-.apc-west-MM-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-west-MM-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0,0,0,1);
-    color: black;
-}
-
-.apc-west-MM-btn:hover {
-    background-color: var(--APC-west-MM-secondary);
-}
-
-.apc-west-JJ-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-west-JJ-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0,0,0,1);
-    color: white;
-}
-
-.apc-west-JJ-btn:hover {
-    background-color: var(--APC-west-JJ-secondary);
-    color: #000;
-}
-
-.apc-west-BAB-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-west-BAB-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0,0,0,1);
-    color: white;
-}
-
-.apc-west-BAB-btn:hover {
-    background-color: var(--APC-west-BAB-secondary);
-}
-
-.apc-west-PRP-btn {
-    padding: 1rem;
-    margin-bottom: 0.1rem;
-    background-color: var(--APC-west-PRP-primary);
-    border-radius: 5px;
-    border: none;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    color: white;
-}
-
-.apc-west-PRP-btn:hover {
-    background-color: var(--APC-west-PRP-secondary);
 }
