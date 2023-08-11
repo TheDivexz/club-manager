@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import SquadView from "./squad_view/squadview";
 import MatchView from "./MatchView";
 import MainSideBar from "./MainSidebar";
-import TeamSelect from "./TeamSelect";
+import TeamSelect from "./team_select/TeamSelect";
 import './styles/utility.css'
 import './styles/app.css'
 
