@@ -44,8 +44,8 @@ const SquadView: React.FC<SquadViewProps> = ({playerTeam}) => {
             <h1 className="team-name">{teamName}</h1>
             <div className="filter-bar">
                 <span>Card View: </span>
-                <button className="filter-btn" onClick={() => setDetailedView(false)}>Simplified</button>
-                <button className="filter-btn" onClick={() => setDetailedView(true)}>Detailed</button>
+                <button className="btn-alt btn-small" onClick={() => setDetailedView(false)}>Simplified</button>
+                <button className="btn-alt btn-small" onClick={() => setDetailedView(true)}>Detailed</button>
             </div>
             <div className="filter-bar">
                 <span>Filter By: </span>
@@ -53,16 +53,16 @@ const SquadView: React.FC<SquadViewProps> = ({playerTeam}) => {
                     detailedView ?
                     (
                         <div>
-                            <button className="filter-btn" onClick={sortByAttack}>Attack</button>
-                            <button className="filter-btn" onClick={sortByDefense}>Defense</button>
-                            <button className="filter-btn" onClick={sortByAccuracy}>Accuracy</button>
-                            <button className="filter-btn" onClick={sortByPass}>Pass</button>
-                            <button className="filter-btn" onClick={sortBySteal}>Steal</button>
-                            <button className="filter-btn" onClick={sortByGameSense}>Game Sense</button>
-                            <button className="filter-btn" onClick={sortByEgo}>Ego</button>
+                            <button className="btn-alt btn-small" onClick={sortByAttack}>Attack</button>
+                            <button className="btn-alt btn-small" onClick={sortByDefense}>Defense</button>
+                            <button className="btn-alt btn-small" onClick={sortByAccuracy}>Accuracy</button>
+                            <button className="btn-alt btn-small" onClick={sortByPass}>Pass</button>
+                            <button className="btn-alt btn-small" onClick={sortBySteal}>Steal</button>
+                            <button className="btn-alt btn-small" onClick={sortByGameSense}>Game Sense</button>
+                            <button className="btn-alt btn-small" onClick={sortByEgo}>Ego</button>
                         </div>
                         
-                    ):<button className="filter-btn" onClick={sortByAverage}>Average</button>
+                    ):<button className="btn-alt btn-small" onClick={sortByAverage}>Average</button>
                 }
             </div>
             <div className="squad-view">

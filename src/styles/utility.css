@@ -102,3 +102,7 @@ body {
 .padding-half {
     padding: 0.5rem;
 }
+
+.main-sidebar {
+    width: 15vw;
+}

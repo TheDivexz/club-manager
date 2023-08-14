@@ -5,6 +5,7 @@ import MainSideBar from "./MainSidebar";
 import TeamSelect from "./team_select/TeamSelect";
 import './styles/utility.css'
 import './styles/app.css'
+import { teamStyles } from "./interfaces/teamColors";
 
 const App = () => {
 
@@ -25,10 +26,10 @@ const App = () => {
                 playerTeam !== -1 ?
                 (
                     <div className="h-flex">
-                        <div className="border-green"></div>
-                        <div className=""><MainSideBar whichView={handleCurrentView}/></div>
-                        <div className="">{currentView === 0 ? <SquadView playerTeam={playerTeam}/> : ''}</div>
-                        <div className="">{currentView === 1 ? <MatchView teamOne={playerTeam}/> : ''}</div>
+                        <div style={teamStyles[playerTeam]} className="border-primary"></div>
+                        <div style={teamStyles[playerTeam]}><MainSideBar whichView={handleCurrentView}/></div>
+                        <div style={teamStyles[playerTeam]}>{currentView === 0 ? <SquadView playerTeam={playerTeam}/> : ''}</div>
+                        <div style={teamStyles[playerTeam]}>{currentView === 1 ? <MatchView teamOne={playerTeam}/> : ''}</div>
                     </div>
                 )
                 :

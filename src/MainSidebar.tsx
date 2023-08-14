@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import './styles/utility.css'
-import './styles/main_sidebar.css'
+import './styles/styles.css'
 
 // Define the type for the props
 interface MainSideBarProps {
@@ -16,8 +16,8 @@ const MainSideBar: React.FC<MainSideBarProps> = ({whichView}) => {
     return (
         <div className="background">
             <div className="v-flex main-sidebar">
-                <button className="btn-green" onClick={() => determineView(0)}> Squad View </button>
-                <button className="btn-green" onClick={() => determineView(1)}> Match View </button>
+                <button className="btn" onClick={() => determineView(0)}> Squad View </button>
+                <button className="btn" onClick={() => determineView(1)}> Match View </button>
             </div>
         </div>
     )

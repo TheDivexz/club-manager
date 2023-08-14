@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { playerObject } from "../interfaces/playerObject";
 import '../styles/player_card.css'
+import '../styles/styles.css'
 
 interface playerObjectProps {
     playerInfo: playerObject,

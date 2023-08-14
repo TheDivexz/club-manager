@@ -26,26 +26,6 @@ body {
     text-align: center;
 }
 
-.filter-btn {
-    margin: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    background-color: #cff0c5;
-    border-radius: 5px;
-    border: 1px #aaaaaa solid;
-}
-
-.filter-btn:hover {
-    background-color: #b4d7a9;
-    cursor: pointer;
-}
-
-.filter-btn:active {
-    background-color: #9cc490;
-}
-
 .btn {
     padding: 1rem;
     margin-bottom: 0.1rem;
@@ -53,11 +33,35 @@ body {
     border-radius: 5px;
     border: none;
     backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     color: var(--text-color);
 }
 
 .btn:hover {
     background-color: var(--secondary);
     color: var(--alt-text-color);
+}
+
+.btn-alt {
+    padding: 1rem;
+    margin-bottom: 0.1rem;
+    background-color: var(--secondary);
+    border-radius: 5px;
+    border: none;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    color: var(--alt-text-color);
+}
+
+.btn-alt:hover {
+    background-color: var(--primary);
+    color: var(--text-color);
+}
+
+.btn-small {
+    margin: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
 }

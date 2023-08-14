@@ -2,52 +2,48 @@
 
 .player-card {
     position: relative;
-    background-color: rgba(31,182,34,1);
+    background-color: var(--primary);
     margin: 1rem;
     padding: 1rem;
     border-radius: 5px;
-    outline: #aaaaaa solid 1px;
     backdrop-filter: blur(8px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 .player-card:hover {
-    background-color: rgb(22, 162, 25);
+    background-color: var(--secondary);
     cursor: pointer;
 }
 
-.player-card:active {
-    background-color: rgb(14, 128, 16);
-}
-
-.player-card:active > .property-wrap {
-    background-color: rgb(14, 128, 16);
-}
-
-.player-card:hover > .property-wrap {
-    background-color: rgb(22, 162, 25);
+.player-card:hover > .property-wrap, .player-card:hover > .player-name {
+    background-color: var(--secondary);
+    color: var(--alt-text-color);
 }
 
 .player-name {
     font-size: large;
-    background-color: rgba(31,182,34,1);
+    background-color: var(--primary);
     padding: 0.5rem 1rem;
-    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
-    color: white;
+    color: var(--text-color);
+    border-radius: 5px;
 }
+
 
 
 .property-wrap {
     padding: 0.2rem;
     margin-top: 0.5rem;
-    background-color: rgba(31,182,34,1);
-    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--primary);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
+    border-radius: 5px;
 }
 
 .property-text {
     justify-content: center;
     text-align: center;
     size: 1.5rem;
+    color: var(--text-color);
 }
