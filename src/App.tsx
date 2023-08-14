@@ -11,6 +11,7 @@ const App = () => {
 
     const [currentView, setCurrentView] = useState(0);
     const [playerTeam, setPlayerTeam] = useState(-1);
+    const [opponentTeam, setOpponentTeam] = useState(-1);
 
     const handleCurrentView = (view: number) => {
         setCurrentView(view);
@@ -19,6 +20,10 @@ const App = () => {
     const handlePlayerTeam = (team: number) => {
         setPlayerTeam(team);
     }
+
+    useEffect(() => {
+        setOpponentTeam(Math.floor(Math.random() * 32));
+    }, [playerTeam]);
 
     return (
         <div>
@@ -29,7 +34,7 @@ const App = () => {
                         <div style={teamStyles[playerTeam]} className="border-primary"></div>
                         <div style={teamStyles[playerTeam]}><MainSideBar whichView={handleCurrentView}/></div>
                         <div style={teamStyles[playerTeam]}>{currentView === 0 ? <SquadView playerTeam={playerTeam}/> : ''}</div>
-                        <div style={teamStyles[playerTeam]}>{currentView === 1 ? <MatchView teamOne={playerTeam}/> : ''}</div>
+                        <div style={teamStyles[playerTeam]}>{currentView === 1 ? <MatchView teamOne={playerTeam} teamTwo={opponentTeam}/> : ''}</div>
                     </div>
                 )
                 :

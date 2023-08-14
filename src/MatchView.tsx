@@ -3,12 +3,15 @@ import { invoke } from "@tauri-apps/api/tauri";
 import './styles/match_view.css'
 import { playerObject } from "./interfaces/playerObject";
 import './styles/utility.css'
+import './styles/styles.css'
+import { teamStyles } from "./interfaces/teamColors";
 
 interface MatchViewProps {
     teamOne: number,
+    teamTwo: number,
 }
 
-const MatchView: React.FC<MatchViewProps> = ({teamOne}) => {
+const MatchView: React.FC<MatchViewProps> = ({teamOne,teamTwo}) => {
 
     const [teamOneName,setTeamOneName] = useState("");
     const [teamOneSquad,setTeamOneSquad] = useState<playerObject[]>([]);
@@ -28,17 +31,19 @@ const MatchView: React.FC<MatchViewProps> = ({teamOne}) => {
 
     const [winner,setWinner] = useState(0);
 
+    const [styling,setStyling] = useState({});
+
     const colNumbersArray = Array.from({ length: 10 }, (_, index) => index);
     const rowNumbersArray = Array.from({ length: 5 }, (_, index) => index);
 
     async function setTeamNames() {
         setTeamOneName(await invoke("get_team_name",{teamId: teamOne}));
-        setTeamTwoName(await invoke("get_team_name",{teamId: 1}));
+        setTeamTwoName(await invoke("get_team_name",{teamId: teamTwo}));
     }
 
     async function setSquads() {
         setTeamOneSquad(await invoke("get_team_lineup", {teamId: teamOne}));
-        setTeamTwoSquad(await invoke("get_team_lineup", {teamId: 1}));
+        setTeamTwoSquad(await invoke("get_team_lineup", {teamId: teamTwo}));
         console.log();
         
     }
@@ -46,6 +51,16 @@ const MatchView: React.FC<MatchViewProps> = ({teamOne}) => {
     useEffect(() => {
         setSquads();
         setTeamNames();
+        const home_team_style = teamStyles[teamOne];
+        const away_team_style = teamStyles[teamTwo];
+        setStyling({
+            "--home-color": home_team_style["--primary"],
+            "--home-alt-color": home_team_style["--secondary"],
+            "--home-text-color": home_team_style["--text-color"],
+            "--away-color": away_team_style["--secondary"],
+            "--away-alt-color": away_team_style["--primary"],
+            "--away-text-color": away_team_style["--alt-text-color"],
+        })
     },[])
 
     const simulateSetup = () => {
@@ -104,10 +119,10 @@ const MatchView: React.FC<MatchViewProps> = ({teamOne}) => {
     }
 
     return (
-        <div className="match-view background vw-80">
+        <div style={styling} className="match-view background vw-80">
             <span className="title-bar">
-                <h2 className="blue-text">{teamOneName}</h2>
-                <h2 className="red-text">{teamTwoName}</h2>
+                <h2 className="home-text">{teamOneName}</h2>
+                <h2 className="away-text">{teamTwoName}</h2>
             </span>
             {/* Generates the game board */}
             {
@@ -120,14 +135,14 @@ const MatchView: React.FC<MatchViewProps> = ({teamOne}) => {
                                     return (
                                         number < 5 ? 
                                         (
-                                            <div key={number} className="box square-blue">
+                                            <div key={number} className="box square-home">
                                                 <p>{ rowMask[row_num][0] === number && teamOneSquad.length !== 0 ? teamOneSquad[row_num].name : '' }</p>
                                                 <p>{ rowMask[row_num][1] === number && teamTwoSquad.length !== 0  ? teamTwoSquad[row_num].name : '' }</p>
                                             </div>
                                         )
                                         :
                                         (
-                                            <div key={number} className="box square-red">
+                                            <div key={number} className="box square-away">
                                             <p>{ rowMask[row_num][0] === number && teamOneSquad.length !== 0  ? teamOneSquad[row_num].name : '' }</p>
                                             <p>{ rowMask[row_num][1] === number && teamTwoSquad.length !== 0  ? teamTwoSquad[row_num].name : '' }</p>
                                             </div>
@@ -145,10 +160,10 @@ const MatchView: React.FC<MatchViewProps> = ({teamOne}) => {
                     winner === 0 ? (
                         gameStarted ?
                         <div>
-                            <button className="start-btn" onClick={nextTurn}>NEXT TURN</button>
+                            <button className="btn" onClick={nextTurn}>NEXT TURN</button>
                         </div>
                         :
-                        <button className="start-btn" onClick={simulateSetup}>START</button>
+                        <button className="btn" onClick={simulateSetup}>START</button>
                     ) : (
                         <h1 className="text-center">{winner === 1 ? teamOneName : teamTwoName} WINS!</h1>
                     )
