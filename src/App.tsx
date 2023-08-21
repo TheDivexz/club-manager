@@ -6,6 +6,7 @@ import TeamSelect from "./team_select/TeamSelect";
 import './styles/utility.css'
 import './styles/app.css'
 import { teamStyles } from "./interfaces/teamColors";
+import CalenderView from "./Calender/CalenderView";
 
 const App = () => {
 
@@ -35,6 +36,7 @@ const App = () => {
                         <div style={teamStyles[playerTeam]}><MainSideBar whichView={handleCurrentView}/></div>
                         <div style={teamStyles[playerTeam]}>{currentView === 0 ? <SquadView playerTeam={playerTeam}/> : ''}</div>
                         <div style={teamStyles[playerTeam]}>{currentView === 1 ? <MatchView teamOne={playerTeam} teamTwo={opponentTeam}/> : ''}</div>
+                        <div style={teamStyles[playerTeam]}>{currentView === 2 ? <CalenderView/> : ''}</div>
                     </div>
                 )
                 :

@@ -18,6 +18,7 @@ const MainSideBar: React.FC<MainSideBarProps> = ({whichView}) => {
             <div className="v-flex main-sidebar">
                 <button className="btn" onClick={() => determineView(0)}> Squad View </button>
                 <button className="btn" onClick={() => determineView(1)}> Match View </button>
+                <button className="btn" onClick={() => determineView(2)}> Calender View </button>
             </div>
         </div>
     )

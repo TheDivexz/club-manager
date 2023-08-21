@@ -87,6 +87,10 @@ body {
     width: 95%;
 }
 
+.margin-5px {
+    margin: 5px;
+}
+
 .margin-bottom-1 {
     margin-bottom: 1rem;
 }

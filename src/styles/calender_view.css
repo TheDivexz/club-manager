@@ -1,0 +1,18 @@
+.calender-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    overflow: hidden;
+    grid-gap: 0.5rem;
+}
+
+.date-box {
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    background-color: var(--primary);
+    transition: all 0.3s ease-in-out;
+    width: 11vw;
+    height: 11vw;
+}
