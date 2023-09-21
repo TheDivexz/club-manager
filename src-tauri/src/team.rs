@@ -73,46 +73,47 @@ pub fn generate_teams() {
 
     // United States Conference
     // USC East
-    new_team("Hudson Harbor Hurricanes".to_string(),&name_list);
-    new_team("Florida Flamingos".to_string(),&name_list);
-    new_team("Lynn Lightning".to_string(),&name_list);
-    new_team("Milford Minutemen".to_string(),&name_list);
+    new_team("Brooklyn Dead Presidents".to_string(),&name_list); //Jay-Z's Dead Presidents II
+    new_team("Miami Black Balloons".to_string(),&name_list); //Denzel Curry's BLACK BALLOONS | 13LACK 13ALOONZ
+    new_team("Derry Killer Clowns".to_string(),&name_list); //Steven King's It
+    new_team("El Barrio Caciques".to_string(),&name_list); // El Barrio is an alt name for East Harlem, 2Pac is named after Tupac Amaru II who was
+    // a cacique or chif of an andean rebellion against the spanish
     // USC North
-    new_team("Pennsylvania Panthers".to_string(),&name_list);
-    new_team("Ohio Outlaws".to_string(),&name_list);
-    new_team("Detroit Dragons".to_string(),&name_list);
-    new_team("Indianapolis Ironclads".to_string(),&name_list);
+    new_team("Cleavland Moonmen".to_string(),&name_list); // Kid Cudi's Man on the Moon
+    new_team("Baltimore Feasting Crows".to_string(),&name_list); // GRR Martin's Feast of Crows
+    new_team("West Reading Anti-Heros".to_string(),&name_list); // Taylor Swift's Anti-Hero
+    new_team("Columbus Heathens".to_string(),&name_list); // 21 Pilots's Heathen
     // USC South
-    new_team("Pasadena Phantoms".to_string(),&name_list);
-    new_team("Savannah Storm".to_string(),&name_list);
-    new_team("Memphis Moonwalkers".to_string(),&name_list);
-    new_team("Kentucky Derby Daredevils".to_string(),&name_list);
+    new_team("Palm Beach Dangerous Rings".to_string(),&name_list); //Ariana Grande's Dangerous Woman and 7 Rings
+    new_team("Nashville Flowers".to_string(),&name_list); // Mily Cyrus's Flowers
+    new_team("Houston Astrobirds".to_string(),&name_list); // Travis Scott's Astroworld and Birds in the Trap Sing McKnight
+    new_team("Gary Smooth Criminals".to_string(),&name_list); // Michael Jackson's Smooth Criminal
     // USC West
-    new_team("Golden Gate Griffins".to_string(),&name_list);
-    new_team("Scottsdale Scorpions".to_string(),&name_list);
-    new_team("Pikes Peak Pioneers".to_string(),&name_list);
-    new_team("Oregon Thunderhawks".to_string(),&name_list);
+    new_team("Las Vegas Couriers".to_string(),&name_list); //New Vegas MC is called Courier
+    new_team("St.Jospeh Toy Soldiers".to_string(),&name_list); //Eminem's Toy Soldiers
+    new_team("Compton Steppers".to_string(),&name_list); //Kendrick Lamar's Big Steppers
+    new_team("Colorado Springs Natives".to_string(),&name_list); // OneRepublic's album Native
     // American Patriot Conference
     // APC East
-    new_team("Jersey City Jaguars".to_string(),&name_list);
-    new_team("Roanoke Ravens".to_string(),&name_list);
-    new_team("Maryland Monarchs".to_string(),&name_list);
-    new_team("Seattle Stormchasers".to_string(),&name_list);
+    new_team("Dallas Ice Ice Babies".to_string(),&name_list); //Vanilla Ice's Ice Ice Baby
+    new_team("Seattle Songbirds".to_string(),&name_list); // Kenny G's Songbird
+    new_team("Philadelphia Fresh Princes".to_string(),&name_list); // Will Smith Fresh Prince of Bel-Air
+    new_team("Brownsville Sirens".to_string(),&name_list); // Ka's Orphereus vs the Sirens
     // APC North
-    new_team("Logan Square Locomotives".to_string(),&name_list);
-    new_team("Waukesha Wolverines".to_string(),&name_list);
-    new_team("St. Paul Spartans".to_string(),&name_list);
-    new_team("Ankeny Arrows".to_string(),&name_list);
+    new_team("Milwaukee Chocolatiers".to_string(),&name_list); //Gene Wilder as Willy Wonka, a Chocolatier
+    new_team("Grosse Pointe Jazz".to_string(),&name_list); // JK Simmon's role in Whiplash
+    new_team("Minneapolis Purple Rain".to_string(),&name_list); //Prince's Purple Rain
+    new_team("Chicago Monsters".to_string(),&name_list); // Kanye West's Monster
     // APC South
-    new_team("Charlotte Crushers".to_string(),&name_list);
-    new_team("Shreveport Swamp Sirens".to_string(),&name_list);
-    new_team("Columbia Commanders".to_string(),&name_list);
-    new_team("Fort Smith Firebirds".to_string(),&name_list);
+    new_team("Atlanta Rockets".to_string(),&name_list); // Migos's Takeoff
+    new_team("Florida 305s".to_string(),&name_list); // Pitbull aka Mr.305
+    new_team("New Orleans Millions".to_string(),&name_list); // Lil Wayne's A Milli
+    new_team("Fayetteville Born Sinners".to_string(),&name_list); // J Cole's Born Sinners
     // APC West
-    new_team("Mississippi Magnolias".to_string(),&name_list);
-    new_team("Joplin Jets".to_string(),&name_list);
-    new_team("Broken Arrow Blazers".to_string(),&name_list);
-    new_team("Puerto Rico Piranhas".to_string(),&name_list);
+    new_team("Los Angeles Red Hot Chili Peppers".to_string(),&name_list); // Red Hot Chili Peppers
+    new_team("Long Beach Doggs".to_string(),&name_list); //Snoop Dogg
+    new_team("Seattle Foo Fighters".to_string(),&name_list); //Foo Fighters
+    new_team("Pheonix Society of Invisibles".to_string(),&name_list); //The Society of Invisibles
 
 }
 
