@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { teamStyles } from "../interfaces/teamColors";
 import { invoke } from "@tauri-apps/api/tauri";
+import { Button } from "antd";
 import '../styles/styles.css'
 
 interface TeamSelectButtonProps {
@@ -24,11 +24,9 @@ const TeamSelectButton: React.FC<TeamSelectButtonProps> = ({teamId,selectedTeam}
     },[])
 
     return(
-        <button 
-            onClick={() => determineTeam(teamId)} 
-            className="btn width-95" 
-            style={teamStyles[teamId]}>{teamName}
-        </button>
+        <Button block onClick={() => determineTeam(teamId)}>
+            {teamName}
+        </Button>
     )
 }
 
