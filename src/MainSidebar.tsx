@@ -1,11 +1,37 @@
 import { useEffect, useState } from "react";
 import './styles/utility.css'
 import './styles/styles.css'
+import type { MenuProps } from "antd";
+import { Menu } from 'antd';
 
 // Define the type for the props
 interface MainSideBarProps {
     whichView: (data: number) => void; // Function that accepts a string parameter and returns void
-  }
+}
+
+// Needed Boilerplate for defining what a menu item is
+type MenuItem = Required<MenuProps>['items'][number];
+function getItem(
+    label: React.ReactNode,
+    key: React.Key,
+    icon?:React.ReactNode,
+    children?: MenuItem[],
+    type?: 'group',
+): MenuItem {
+    return {
+        key,
+        icon,
+        children,
+        label,
+        type,
+    } as MenuItem
+}
+
+const items: MenuProps['items'] = [
+    getItem('Squad View','0'),
+    getItem('Match View','1'),
+    getItem('Calender View','2'),
+]
 
 const MainSideBar: React.FC<MainSideBarProps> = ({whichView}) => {
 
@@ -13,14 +39,20 @@ const MainSideBar: React.FC<MainSideBarProps> = ({whichView}) => {
         whichView(view);
     }
 
+    const onClick: MenuProps['onClick'] = (e) => {
+        console.log('click',e);
+        determineView(+e.key)
+    }
+
     return (
-        <div className="background">
-            <div className="v-flex main-sidebar">
-                <button className="btn" onClick={() => determineView(0)}> Squad View </button>
-                <button className="btn" onClick={() => determineView(1)}> Match View </button>
-                <button className="btn" onClick={() => determineView(2)}> Calender View </button>
-            </div>
-        </div>
+        <Menu
+            onClick={onClick}
+            style={{ width: 256 }}
+            defaultSelectedKeys={['1']}
+            defaultOpenKeys={['sub1']}
+            mode="inline"
+            items={items}
+        />
     )
 }
 

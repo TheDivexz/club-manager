@@ -26,13 +26,15 @@ const App = () => {
         setOpponentTeam(Math.floor(Math.random() * 32));
     }, [playerTeam]);
 
+
+
+
     return (
         <div>
             {
                 playerTeam !== -1 ?
                 (
                     <div className="h-flex">
-                        <div style={teamStyles[playerTeam]} className="border-primary"></div>
                         <div style={teamStyles[playerTeam]}><MainSideBar whichView={handleCurrentView}/></div>
                         <div style={teamStyles[playerTeam]}>{currentView === 0 ? <SquadView playerTeam={playerTeam}/> : ''}</div>
                         <div style={teamStyles[playerTeam]}>{currentView === 1 ? <MatchView teamOne={playerTeam} teamTwo={opponentTeam}/> : ''}</div>
