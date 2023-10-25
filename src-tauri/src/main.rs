@@ -22,10 +22,12 @@ fn main() {
             team::get_players_in_team,
             team::get_team_name,
             team::get_all_team_names,
+            team::get_players_display_data,
             team::get_team_lineup,
             on_daily::on_daily,
             track_date::get_date_and_day_of_week_string,
-            simulate_turn::simulate_turn
+            simulate_turn::simulate_turn,
+            player::get_player
             ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

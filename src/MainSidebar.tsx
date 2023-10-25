@@ -40,7 +40,6 @@ const MainSideBar: React.FC<MainSideBarProps> = ({whichView}) => {
     }
 
     const onClick: MenuProps['onClick'] = (e) => {
-        console.log('click',e);
         determineView(+e.key)
     }
 

@@ -11,7 +11,7 @@ use std::clone::Clone;
 #[allow(dead_code)]
 pub struct PlayerData {
     pub name: String,
-    player_id: String,
+    pub player_id: String,
     // What is the chance that the player will make a shot
     pub accuracy: u8,
     max_accuracy: u8,
@@ -81,11 +81,12 @@ pub fn generate_new_player(name: String) -> Uuid {
 
 }
 
+pub fn calculate_player_average(player: &PlayerData) -> u8 {
+    return (((player.attack as u32) + (player.defense as u32) + (player.accuracy as u32) + (player.pass as u32) + (player.steal as u32) + (player.game_sense as u32) - (player.ego as u32))/6) as u8
+}
 
-// // Access and mutate the static HashMap
-// MY_MAP.lock().unwrap().insert(1, "Hello".to_string());
-// MY_MAP.lock().unwrap().insert(2, "World".to_string());
-
-// // Access the values in the HashMap
-// println!("{:?}", MY_MAP.lock().unwrap().get(&1));
-// println!("{:?}", MY_MAP.lock().unwrap().get(&2));
+#[tauri::command]
+pub fn get_player(player_id: String) -> PlayerData {
+    let id: Uuid = Uuid::parse_str(&player_id).expect("not a valid ID");
+    return ALL_PLAYERS.lock().unwrap().get(&id).expect("Player Not Found").clone();
+}

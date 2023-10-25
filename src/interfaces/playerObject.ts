@@ -1,6 +1,6 @@
 export interface playerObject {
-    name: String;
-    player_id: String;
+    name: string;
+    player_id: string;
     starter: boolean;
 
     accuracy: number;

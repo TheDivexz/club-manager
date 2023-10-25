@@ -2,7 +2,7 @@ use lazy_static::lazy_static;
 use std::{sync::Mutex, fs::File, io::Read};
 use uuid::Uuid;
 use serde_json;
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 use rand::Rng;
 use std::path::Path;
 
@@ -25,6 +25,21 @@ struct Names {
     male: Vec<String>,
     female: Vec<String>,
     surname: Vec<String>
+}
+
+// Structured data for displaying player information in a table
+#[derive(Serialize)]
+pub struct PlayerTableData {
+    key: String,
+    name: String,
+    average: u8,
+    attack: u8,
+    defense: u8,
+    accuracy: u8,
+    pass: u8,
+    steal: u8,
+    game_sense: u8,
+    ego: u8
 }
 
 // Given a structure of names print out a first and last name
@@ -157,4 +172,25 @@ pub fn get_team_lineup(team_id: usize) -> Vec<PlayerData> {
         lineup.push(current_player);
     }
     return lineup;
+}
+
+#[tauri::command]
+pub fn get_players_display_data(team_id: usize) -> Vec<PlayerTableData>{
+    let squad_info: Vec<PlayerData> = get_players_in_team(team_id);
+    let mut squad_table_info: Vec<PlayerTableData> = vec![];
+    for squadie in squad_info {
+        squad_table_info.push(PlayerTableData { 
+            key: squadie.player_id.clone(),
+            name: squadie.name.clone(), 
+            average: player::calculate_player_average(&squadie), 
+            attack: squadie.attack, 
+            defense: squadie.defense, 
+            accuracy: squadie.accuracy, 
+            pass: squadie.pass, 
+            steal: squadie.steal, 
+            game_sense: squadie.game_sense, 
+            ego: squadie.ego
+        })
+    }
+    return squad_table_info;
 }
