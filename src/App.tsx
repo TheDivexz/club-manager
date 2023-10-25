@@ -5,7 +5,6 @@ import MainSideBar from "./MainSidebar";
 import TeamSelect from "./team_select/TeamSelect";
 import './styles/utility.css'
 import './styles/app.css'
-import { teamStyles } from "./interfaces/teamColors";
 import CalenderView from "./Calender/CalenderView";
 
 const App = () => {
@@ -35,10 +34,10 @@ const App = () => {
                 playerTeam !== -1 ?
                 (
                     <div className="h-flex">
-                        <div style={teamStyles[playerTeam]}><MainSideBar whichView={handleCurrentView}/></div>
-                        <div style={teamStyles[playerTeam]}>{currentView === 0 ? <SquadView playerTeam={playerTeam}/> : ''}</div>
-                        <div style={teamStyles[playerTeam]}>{currentView === 1 ? <MatchView teamOne={playerTeam} teamTwo={opponentTeam}/> : ''}</div>
-                        <div style={teamStyles[playerTeam]}>{currentView === 2 ? <CalenderView/> : ''}</div>
+                        <MainSideBar whichView={handleCurrentView}/>
+                        {currentView === 0 ? <SquadView playerTeam={playerTeam}/> : ''}
+                        {currentView === 1 ? <MatchView teamOne={playerTeam} teamTwo={opponentTeam}/> : ''}
+                        {currentView === 2 ? <CalenderView/> : ''}
                     </div>
                 )
                 :
